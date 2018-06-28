@@ -1,0 +1,12 @@
+import
+
+def f(x):
+
+
+xs = 
+ys = 
+
+for 
+
+plot
+show
