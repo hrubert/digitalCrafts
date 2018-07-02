@@ -19,6 +19,9 @@ class Goblin:
     def __init__(self):
         self.health = 6
         self.power = 2
+    def attack(self, hero):
+        hero.health -= goblin.power
+        print("The goblin does {} damage to you.".format(goblin.power))
 
 hero = Hero()
 goblin = Goblin()
@@ -46,11 +49,9 @@ def main():
             break
         else:
             print("Invalid input {}".format(raw_input))
-
         if goblin.health > 0:
             # Goblin attacks hero
-            hero.health -= goblin.power
-            print("The goblin does {} damage to you.".format(goblin.power))
+            goblin.attack(hero)
             if hero.health <= 0:
                 print("You are dead.")
 
