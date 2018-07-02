@@ -13,6 +13,9 @@ class Character:
     def alive(self):
         return self.health > 0
     def attack(self, enemy):
+        if enemy.name == 'zombie':
+            self.power = 0
+            print("Your attacks are useless against the undead!")
         enemy.health -= self.power
         if (self.name == 'hero'):
             print("You do {} damage to the {}.".format(self.power, enemy.name))
@@ -30,21 +33,22 @@ class Character:
 
 hero = Character(10, 5, "hero")
 goblin = Character(6, 2, "goblin")
+zombie = Character(10, 1, "zombie")
 
-def main():
-    while goblin.alive() and hero.alive():
+def main(enemy):
+    while enemy.alive() and hero.alive():
         hero.print_status()
-        goblin.print_status()
+        enemy.print_status()
         print()
         print("What do you want to do?")
-        print("1. fight goblin")
+        print("1. fight {}".format(enemy.name))
         print("2. do nothing")
         print("3. flee")
         print("> ", end=' ')
         raw_input = input()
         if raw_input == "1":
-            # Hero attacks goblin
-            hero.attack(goblin)
+            # Hero attacks enemy
+            hero.attack(enemy)
         elif raw_input == "2":
             pass
         elif raw_input == "3":
@@ -52,8 +56,8 @@ def main():
             break
         else:
             print("Invalid input {}".format(raw_input))
-        if goblin.health > 0:
-            # Goblin attacks hero
-            goblin.attack(hero)
+        if enemy.health > 0:
+            # enemy attacks hero
+            enemy.attack(hero)
 
-main()
+main(zombie)
