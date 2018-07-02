@@ -6,8 +6,7 @@
 # 2. do nothing - in which case the goblin will attack him anyway
 # 3. flee
 
-# warrior 50 percent chance to block
-# chance to charm attack
+# shotgun enables you to kill zombies
 from random import randint
 
 class Character:
@@ -17,23 +16,41 @@ class Character:
         self.name = name
         self.player = player
         self.money = 50
+        self.itemList = []
+        self.armor = 0
+        self.evade = 0
+        self.shotgun = False
+        self.swap = False
     def alive(self):
         return self.health > 0
     def attack(self, enemy):
         if enemy.name == "shadow" and randint(1, 10) > 1:
                 print("Blending into the shadows, you avoid all damage")
         else:
-            enemy.health -= self.power
             if self.player == True:
+                enemy.health -= self.power
                 print("You do {} damage to the {}.".format(self.power, enemy.name))
-                if enemy.health <= 0 and enemy.name != "zombie":
+                if enemy.health <= 0 and (enemy.name != "zombie" or self.shotgun == True):
                     print("The {} is dead.".format(enemy.name))
                     hero.money += enemy.bounty
                     print(f"You have {hero.money} coins.")
-                    raw_input = input()
-                    main(enemylist[randint(0, 1)])                                        
+                    enemy1.health = 10
+                    enemy2.health = 6
+                    purchase_item()                                       
             else:
-                print("The {} does {} damage to you.".format(self.name, self.power))
+                if hero.armor >= self.power:
+                    print("armor blocked the damage")
+                else:
+                    enemy.health -= (self.power - hero.armor)
+                    print("The {} does {} damage to you.".format(self.name, self.power))
+                if hero.evade > 0:
+                    num = randint(0, (10 + hero.evade))
+                    if hero.evade >= num :
+                        print("you evaded the hit")
+                    else:
+                        enemy.health -= self.power
+                else:
+                    enemy.health -= self.power
                 if enemy.health <= 0:
                     print("You are dead.")
     def print_status(self):
@@ -41,16 +58,37 @@ class Character:
             print("You have {} health and {} power.".format(self.health, self.power))
         else:
             print("The {} has {} health and {} power.".format(self.name,self.health, self.power))
+    def use_item(self):
+        print("Here is what's in your backpack: {}".format(hero.itemList))
+        item_to_use = input("What item would you like to use?")
+        if item_to_use == "super tonic":
+            self.health += 10
+            self.itemList.remove(item_to_use)
+            print("You heal to {} hp".format(self.health))
+        if item_to_use == "swap":
+            self.itemList.remove(item_to_use)
+            print("You use swap")
+            self.swap = True
+        else:
+            pass
+    def swapIt(self, enemy):
+        i = self.power
+        self.power = enemy.power
+        enemy.power = i
     
 class Hero(Character):
     def attack(self, enemy):
+        crit = False
         if randint(1, 5) == 1:
             self.power *= 2
+            crit = True
             print("You CRIT for double damage!")
             super().attack(enemy)
-            self.power /= 2
         else:
-            super().attack(enemy)            
+            super().attack(enemy)
+        if crit == True:
+            self.power /= 2
+            crit = False
 
 class Medic(Character):
     def print_status(self):
@@ -89,7 +127,7 @@ class Princess(Character):
             hero.money += enemy.bounty
             print(f"You have {hero.money} coins.")
             raw_input = input()                        
-            main(enemylist[randint(0, 1)])
+            purchase_item()
         else:
             super().attack(enemy)
 
@@ -105,14 +143,15 @@ class Coward(Character):
 enemy1 = Zombie(10, 1, "zombie", False)
 enemy2 = Goblin(6, 2, 'goblin', False)
 enemylist = [enemy1, enemy2]
-hero = Princess(12, 5, 'princess', True)
+hero = Hero(40, 5, 'princess', True)
 
 shop = {
-    'SuperTonic' = 5,
-    'Armor' = 30,
-    'Evasive Boots' = 25,
-    'Chainsaw' = 40,
-    'Shotgun' = 40
+    'super tonic': 5,
+    'armor': 30,
+    'evasive boots': 25,
+    'chainsaw': 40,
+    'shotgun': 40,
+    'swap': 15
 }
 
 def main(enemy):
@@ -124,20 +163,57 @@ def main(enemy):
         print("1. fight {}".format(enemy.name))
         print("2. do nothing")
         print("3. flee")
+        print("4. use an item")
         print("> ", end=' ')
         raw_input = input()
         if raw_input == "1":
             # Hero attacks enemy
             hero.attack(enemy)
+            if hero.swap == True:
+                hero.swapIt(enemy)
+                hero.swap = False
         elif raw_input == "2":
             pass
         elif raw_input == "3":
             print("Goodbye.")
             exit(0)
+        elif raw_input == "4":
+            hero.use_item()
+            if hero.swap == True:
+                hero.swapIt(enemy)
         else:
             print("Invalid input {}".format(raw_input))
         if enemy.alive():
             # enemy attacks hero
             enemy.attack(hero)
 
-main(enemylist[randint(0, 1)])
+
+def purchase_item():
+    choice = input(("Would you like to buy some equipment before heading out? (y/n)"))
+    if choice == 'y':
+        print("Here are the available items. You have {} coins".format(hero.money))
+        for key in shop:
+            print("{}, {} coins".format(key.capitalize(), shop[key]))
+        itemToBuy = input("What would you like to buy? ").lower()
+        if shop[itemToBuy] < hero.money and itemToBuy in shop.keys():
+            hero.money -= shop[itemToBuy]
+            hero.itemList.append(itemToBuy)
+            if itemToBuy == "armor":
+                hero.armor = 2
+            elif itemToBuy == "evasive boots":
+                hero.evade += 2
+            elif itemToBuy == "chainsaw":
+                hero.power += 3
+            elif itemToBuy == "shotgun":
+                hero.shotgun = True
+            print("You bought {}! You have {} coins left".format(itemToBuy, hero.money))
+            print("Armor is automatically equipped. Remember to use consumables!")
+            input("Press enter to continue")
+            main(enemylist[randint(0, 1)])
+        else:
+            print("Sorry, you were unable to purchase the item.")
+            main(enemylist[randint(0, 1)])
+    else:
+        main(enemylist[randint(0, 1)])
+
+purchase_item()
