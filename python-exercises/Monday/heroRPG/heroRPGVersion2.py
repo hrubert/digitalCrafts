@@ -11,11 +11,11 @@ from random import randint
 # basic character class
 
 class Character:
-    def __init__(self, health, power, name, player):
+    def __init__(self, health, power):
         self.health = health
         self.power = power
-        self.name = name
-        self.player = player
+        self.name = ""
+        self.player = True
         self.money = 50
         self.itemList = []
         self.armor = 0
@@ -94,21 +94,30 @@ class Character:
 
 # basic hero class with a chance to crit 
 class Hero(Character):
+    def __init__(self, health, power):
+        super().__init__(health, power)
+        self.name = "hero"
+        self.player = True
+        self.crit = False
     def attack(self, enemy):
-        crit = False
+        if self.crit == True:
+            self.power /= 2
+            self.crit = False
         if randint(1, 5) == 1:
             self.power *= 2
-            crit = True
+            self.crit = True
             print("You CRIT for double damage!")
             super().attack(enemy)
         else:
             super().attack(enemy)
-        if crit == True:
-            self.power /= 2
-            crit = False
+        
 
 # medic class with a chance to heal after attacked
 class Medic(Character):
+    def __init__(self, health, power):
+        super().__init__(health, power)
+        self.name = "medic"
+        self.player = True
     def print_status(self):
         if randint(1, 5) == 1:
             print("You heal for 2 hp.")
@@ -117,10 +126,17 @@ class Medic(Character):
 
 # shadow class. Pass 1 as it's hp. Will dodge 9 out of 10 attacks
 class Shadow(Character):
-    pass
+    def __init__(self, health, power):
+        super().__init__(health, power)
+        self.name = "shadow"
+        self.player = True
 
 # princess class. Can charm/instakill enemies
 class Princess(Character):
+    def __init__(self, health, power):
+        super().__init__(health, power)
+        self.name = "princess"
+        self.player = True
     def attack(self, enemy):
         if randint(1, 3) == 1:
             print("You charm the enemy with your cuteness! The battle is over.")
@@ -133,6 +149,10 @@ class Princess(Character):
 
 # Mercenary class. Does more damage, but will run away a low health
 class Mercenary(Character):
+    def __init__(self, health, power):
+        super().__init__(health, power)
+        self.name = "mercenary"
+        self.player = True
     def print_status(self):
         if self.health < 5:
             print("You lose your nerve and run away screaming.")
@@ -142,35 +162,30 @@ class Mercenary(Character):
 
 # enemy one -- goblin
 class Goblin(Character):
-    def __init__(self, health, power, name, player):
-        self.health = health
-        self.power = power
-        self.name = name
-        self.player = player
-        self.money = 20 
+    def __init__(self, health, power):
+        super().__init__(health, power)
+        self.name = "goblin"
+        self.player = False
         self.bounty = 5
 
 # enemy 2, zombie. Can only be killed by Princess's charm ability or, with shotgun
 class Zombie(Character):
-    def __init__(self, health, power, name, player):
-        self.health = health
-        self.power = power
-        self.name = name
-        self.player = player
-        self.money = 20
+    def __init__(self, health, power):
+        super().__init__(health, power)
+        self.name = 'zombie'
+        self.player = False
         self.bounty = 10
     def alive(self):
         return True
 
-
 # define characters below. If additional enemy types are created, add them to the enemy list.
 # hero is defined as:
-# hero = ClassName(hp, power, 'classname', Player(T or F))
+# hero = ClassName(hp, power)
 
-enemy1 = Zombie(10, 1, "zombie", False)
-enemy2 = Goblin(6, 2, 'goblin', False)
+enemy1 = Zombie(10, 1)
+enemy2 = Goblin(6, 2)
 enemylist = [enemy1, enemy2]
-hero = Hero(40, 5, 'hero', True)
+hero = Hero(40, 5)
 
 # super tonic - heal for 10 hp
 # armor - adds 2 damage reduction to the hero
