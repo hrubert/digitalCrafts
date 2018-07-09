@@ -41,7 +41,7 @@ class Character:
                 if enemy.health <= 0 and (enemy.name != "zombie" or self.shotgun == True):
                     print("The {} is dead.".format(enemy.name))
                     hero.money += enemy.bounty
-                    print(f"You have {hero.money} coins.")
+                    print("You have {} coins.".format(hero.money))
                     enemy1.health = 10
                     enemy2.health = 6
                     purchase_item()                                       
@@ -141,7 +141,7 @@ class Princess(Character):
         if randint(1, 3) == 1:
             print("You charm the enemy with your cuteness! The battle is over.")
             hero.money += enemy.bounty
-            print(f"You have {hero.money} coins.")
+            print("You have {} coins.".format(hero.money))
             raw_input = input()                        
             purchase_item()
         else:
@@ -218,7 +218,7 @@ def main(enemy):
         print("4. use an item")
         if counter > 3:
             print("5. return to town")
-        print("> ", end=' ')
+        print("> ", end=" ")
         raw_input = input()
         if raw_input == "1":
             # Hero attacks enemy
