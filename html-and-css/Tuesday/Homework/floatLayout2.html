@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0%;
+        }
+
+        header {
+            background-color: lightslategrey;
+            height: 10vh;
+            width: 100%;
+            display: inline-block;
+        }
+
+        footer {
+            background-color: lightslategrey;
+            height: 10vh;
+            width: 100%;
+            display: inline-block;
+        }
+
+        #sidebar {
+            background-color: bisque;
+            width: 300px;
+            float: left;
+        }
+
+        #main {
+            background-color: lightcyan;
+            padding: 10px;
+        } 
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>header</h1>
+    </header>
+    <div id="sidebar">
+        <h1>Proin sit amet est tristique, tincidunt ante id, ultricies nunc. Aenean at nunc sollicitudin, egestas velit eget, mattis dui. Donec at ipsum rhoncus, sodales massa id, mollis eros. Morbi iaculis ornare quam. Donec non nisl mauris. Maecenas nunc diam, vestibulum vel mattis in, pharetra sit amet turpis. Integer iaculis placerat ligula, in mollis nisi sagittis eget.
+            </h1>
+    </div>
+    <div id="main" class="clearfix">
+        <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse euismod erat ac ex porttitor bibendum. Nunc et urna vitae metus aliquam sagittis fermentum eu urna. Donec mollis lacus a ligula fermentum, sit amet dictum tellus venenatis. Nunc cursus, enim eu semper sagittis, erat tellus feugiat lectus, eget rutrum eros mauris sed neque. Aenean quis tellus nec ipsum vestibulum porta aliquet id felis. Curabitur semper eget elit vel egestas. Cras quis consectetur lacus, a bibendum quam. Nulla mauris ipsum, pretium hendrerit interdum sit amet, varius ut nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec ut ornare ligula, quis faucibus massa. Nullam non porttitor tortor. Etiam mattis neque at dui dapibus, eget commodo lacus porttitor. Vivamus vel hendrerit elit, a gravida mauris. Pellentesque efficitur, massa at sagittis luctus, lectus sapien cursus libero, et aliquet orci odio id enim. Nullam nec pretium nisl. Pellentesque velit ligula, lacinia vel rutrum vel, posuere quis nunc.
+
+                Praesent dignissim leo lacus, et pharetra sem pretium eu. Mauris luctus vitae velit quis dapibus. Donec fringilla, quam id convallis maximus, lectus risus efficitur magna, id bibendum libero tellus in enim. Fusce vel dui eu enim tempus fringilla. Donec porttitor mauris eros, ut mattis quam volutpat mattis. Duis faucibus elit quis mi sagittis, id facilisis augue pharetra. Quisque lectus libero, fermentum a odio vitae, tristique dictum risus.</h1>
+    </div>
+    <footer>
+        <h1>footer</h1>
+    </footer>
+</body>
+</html>
