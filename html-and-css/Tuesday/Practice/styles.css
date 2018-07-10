@@ -1,0 +1,19 @@
+.box {
+    background-color: #ccc;
+    padding: 50px;
+    border: 20px solid black;
+    /* margin: 40px; */
+    /* overflow: hidden; auto; scroll;*/
+  }
+
+body {
+    margin: 0px;
+}
+
+.container {
+    width: 900px;
+}
+
+div {
+    width: 400px;
+}
