@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        #container {
+            height: 80%;
+            width: 100%;
+            display: flex;
+            position: absolute;
+            top: 10%;
+            
+        }
+
+        header {
+            background-color: lightblue;
+            height: 10%;
+            width: 100%;
+            display: inline-block;
+            position: absolute;
+            top: 0;
+        }
+
+        #sidebar {
+            background-color: lightcoral;
+            width: 300px;
+            margin: 1%;
+        }
+
+        #main {
+            background-color: lightgreen;
+            width: 50%;
+            flex-grow: 2;
+            margin: 1%;
+        }
+
+        footer {
+            background-color: lightslategray;
+            height: 10%;
+            width: 100%;
+            display: inline-block;
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Header</h1>
+    </header>
+    <div id="container">
+        <div id="sidebar">
+            <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin facilisis nulla ligula, eget porta urna condimentum rhoncus. In lectus justo, malesuada id sapien vitae, bibendum egestas odio. Donec gravida purus in tincidunt blandit.</h1>
+        </div>
+        <div id="main">
+            <h1>Sed sed enim eu mauris mollis porttitor ac eget sapien. Vivamus mi tellus, vulputate quis elementum sit amet, varius ac nulla. Mauris non purus at dolor efficitur posuere id sed risus. Praesent a tellus ac arcu vehicula tempor. Proin sit amet diam vehicula, mattis velit vitae, tempus ligula. Aliquam at mattis enim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</h1>
+        </div>
+    </div>
+    
+    <footer>
+        <h1>Footer</h1>
+    </footer>
+</body>
+</html>

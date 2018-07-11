@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        #container {
+            height: 80%;
+            width: 100%;
+            display: flex;
+            position: absolute;
+            top: 10%;
+            
+        }
+
+        header {
+            background-color: lightblue;
+            height: 10%;
+            width: 100%;
+            display: inline-block;
+            position: absolute;
+            top: 0;
+        }
+
+        #sidebar {
+            background-color: lightcoral;
+            width: 300px;
+            height: 90%;
+            margin: 1%;
+        }
+
+        #main {
+            background-color: lightgreen;
+            height: 70%;
+            width: 50%;
+            flex-grow: 2;
+            margin: 1%;
+        }
+
+        footer {
+            background-color: lightslategray;
+            height: 10%;
+            width: 100%;
+            display: inline-block;
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Header</h1>
+    </header>
+    <div id="container">
+        <div id="sidebar">
+            <h1>Sidebar</h1>
+        </div>
+        <div id="main">
+            <h1>Main Content</h1>
+        </div>
+    </div>
+    
+    <footer>
+        <h1>Footer</h1>
+    </footer>
+</body>
+</html>
