@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Request for Friendship</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        .container {
+            background-color: #87D2FF;
+            border-radius: 3%;
+            padding: 2em;
+        }
+        
+        .container-fluid {
+            background-color: grey;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="container">
+          <h1 class="display-3 text-center">Request for Friendship with Tracy</h1>
+        <form action="mailto:tracynherbert@gmail.com" method="POST"
+        enctype="multipart/form-data"
+        name="FriendshipForm">
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" placeholder="name@example.com">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="cats">How many cats do you have?</label>
+            <select class="form-control" id="cats">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            </select>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="souls">Which of the following video games do you like? Select all that apply.</label>
+            <select multiple class="form-control" id="souls">
+            <option>Demon's Souls</option>
+            <option>Dark Souls 1</option>
+            <option>Dark Souls 2</option>
+            <option>Bloodborne</option>
+            <option>Dark Sould 3</option>
+            </select>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="dream">Describe the your most recent dream. Was it nice?</label>
+            <textarea class="form-control" id="dream" rows="3"></textarea>
+        </div>
+        <br>
+        <label for="lift">Which of the following lifts do you do on a weekly basis?</label>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="deadlift" id="lift">
+            <label class="form-check-label" for="lift">
+                Deadlift
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="ohp" id="lift">
+            <label class="form-check-label" for="lift">
+                Overhead Press
+            </label>
+        </div>            
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="bench" id="lift">
+            <label class="form-check-label" for="lift">
+                Bench
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="squat" id="lift">
+            <label class="form-check-label" for="lift">
+                Squat
+            </label>
+        </div>
+        <br>
+        <label for="cheese">Do you like cheese?</label>
+        <div class="form-check">
+            <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="cheese" id="vms" value="vms" checked>
+            Very much so
+          </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="cheese" id="ks" value="ks">
+            Kinda sorta
+          </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="cheese" id="mnr" value="mnr">
+            Meh. Not really
+          </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="cheese" id="hi" value="hi">
+            Hate it.
+          </label>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>    
+    </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
