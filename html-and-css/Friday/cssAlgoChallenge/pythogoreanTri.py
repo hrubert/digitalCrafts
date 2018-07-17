@@ -1,12 +1,10 @@
-import math
-a = 0
-
 def checkTrip(a, b, c):
     if (a * a) + (b * b) == (c * c) :
         return True
     else:
         return False
 
+a = 0
 while a < 500:
     a += 1
     b = a + 1
