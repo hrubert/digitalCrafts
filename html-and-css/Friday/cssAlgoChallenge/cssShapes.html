@@ -1,65 +1,68 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <title>Title</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
     <style>
-      #square {
-          background-color: blue;
-          display: block;
-          height: 100px;
-          width: 100px;
-          color: white;
-      }
+        #square {
+            background-color: blue;
+            display: block;
+            height: 100px;
+            width: 100px;
+            color: white;
+        }
 
-      #rect {
-          background-color: red;
-          display: block;
-          height: 100px;
-          width: 200px;
-          color: white;
-      }
+        #rect {
+            background-color: red;
+            display: block;
+            height: 100px;
+            width: 200px;
+            color: white;
+        }
 
-      #oval {
-          background-color: yellow;
-          display: block;
-          height: 100px;
-          width: 200px;
-          border-radius: 100%;
-      }
+        #oval {
+            background-color: yellow;
+            display: block;
+            height: 100px;
+            width: 200px;
+            border-radius: 100%;
+        }
 
-      #circle {
-        background-color: green;
-        display: block;
-        height: 100px;
-        width: 100px;
-        border-radius: 100%;
-      }
+        #circle {
+            background-color: green;
+            display: block;
+            height: 100px;
+            width: 100px;
+            border-radius: 100%;
+        }
 
-      #triangle-down, #triangle-down2 {
-        width: 0;
-        height: 0;
-        border-left: 50px solid transparent;
-        border-right: 50px solid transparent;
-        border-top: 100px solid purple;
-      }
+        #triangle-down,
+        #triangle-down2 {
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-top: 100px solid purple;
+        }
 
-      #triangle-down2 {
-          position: absolute;
-          top: 13%;
-      }
+        #triangle-down2 {
+            position: absolute;
+            top: 13%;
+        }
 
-      #triangle-up {
-        width: 0;
-        height: 0;
-        border-left: 50px solid transparent;
-        border-right: 50px solid transparent;
-        border-bottom: 100px solid purple;
+        #triangle-up {
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 100px solid purple;
         }
 
         #diamondtop {
@@ -68,7 +71,7 @@
             border-left: 50px solid transparent;
             border-right: 50px solid transparent;
             border-bottom: 50px solid blue;
-            margin-top:2em;
+            margin-top: 2em;
         }
 
         #diamondbottom {
@@ -79,59 +82,60 @@
             border-top: 50px solid blue;
         }
 
-      #triangle-left {
-        width: 0;
-        height: 0;
-        border-bottom: 50px solid transparent;
-        border-top: 50px solid transparent;
-        border-right: 100px solid orange;
-      }
+        #triangle-left {
+            width: 0;
+            height: 0;
+            border-bottom: 50px solid transparent;
+            border-top: 50px solid transparent;
+            border-right: 100px solid orange;
+        }
 
-      #right-triangle {
-          width: 0;
-          height: 0;
-          border-top: 100px solid transparent;
-          border-right: 100px solid black;
-      }
+        #right-triangle {
+            width: 0;
+            height: 0;
+            border-top: 100px solid transparent;
+            border-right: 100px solid black;
+        }
 
-      #trap {
-          width: 250px;
-          height: 90px;
-          border-right: 100px solid transparent;
-          border-left: 20px solid transparent;
-          border-bottom: 100px solid brown;
-      }
+        #trap {
+            width: 250px;
+            height: 90px;
+            border-right: 100px solid transparent;
+            border-left: 20px solid transparent;
+            border-bottom: 100px solid brown;
+        }
 
-      #pacmanbody {
-          background-color: yellow;
-          height: 200px;
-          width: 200px;
-          border-radius: 100%;
-      }
+        #pacmanbody {
+            background-color: yellow;
+            height: 200px;
+            width: 200px;
+            border-radius: 100%;
+        }
 
-      #pacmanmouth {
-        width: 0;
-        height: 0;
-        border-bottom: 50px solid transparent;
-        border-top: 50px solid transparent;
-        border-right: 100px solid white;
-        position: absolute;
-        top: 38%;
-        left: 6%;
-      }
+        #pacmanmouth {
+            width: 0;
+            height: 0;
+            border-bottom: 50px solid transparent;
+            border-top: 50px solid transparent;
+            border-right: 100px solid white;
+            position: absolute;
+            top: 38%;
+            left: 6%;
+        }
 
-      #pacmaneye {
-          height: 20px;
-          width: 20px;
-          background-color: black;
-          border-radius: 100%;
-          position: absolute;
-          top: 37%;
-          left: 5%;
-      }
+        #pacmaneye {
+            height: 20px;
+            width: 20px;
+            background-color: black;
+            border-radius: 100%;
+            position: absolute;
+            top: 37%;
+            left: 5%;
+        }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="container-fluid">
         <div class="row">
             <div id="square"></div>
@@ -150,7 +154,7 @@
 
             <div id="trap"></div>
         </div>
-        
+
         <div id="triangle-down2"></div>
         <div id="triangle-up"></div>
 
@@ -163,8 +167,12 @@
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
 </html>
