@@ -163,10 +163,9 @@ function longLongVowels(word) {
         if (letter == previousLetter && vowelList.includes(letter)) {
             var cutHere = word.indexOf(letter);
             return word.slice(0, cutHere) + letter.repeat(3) + word.slice(cutHere, );
-        } 
-        else {
+        } else {
             previousLetter = letter;
-        }  
+        }
     }
     return word;
 }
@@ -199,10 +198,9 @@ function cipher(str) {
         let char = str.charCodeAt(letter);
         if ((char > 64 && char < 78) || (char > 97 && char < 110)) {
             char += 13;
-        }
-        else if ((char > 77 && char < 91) || (char > 109 && char < 123)){
+        } else if ((char > 77 && char < 91) || (char > 109 && char < 123)) {
             char -= 13;
-        }   
+        }
         encoded += String.fromCharCode(char);
     }
     return encoded;
@@ -217,18 +215,17 @@ function decipher(str, offset) {
     let str2 = str.toLowerCase()
     let decoded = "";
     let alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p",
-    "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+        "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
+    ];
     for (var letter of str2) {
         if (alphabet.includes(letter)) {
             var idx = alphabet.indexOf(letter) - offset;
-            if (idx > - 1 ){
+            if (idx > -1) {
                 decoded += alphabet[idx];
-            }
-            else {
+            } else {
                 decoded += alphabet[26 + idx];
             }
-        }
-        else {
+        } else {
             decoded += letter;
         }
     }
