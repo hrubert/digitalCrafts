@@ -144,7 +144,7 @@ function myMap(arr, fun) {
 function cipher(text) {
     var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
     var word = text.split('');
-    return word.map(function adjustLetter(letter){
+    return word.map(function adjustLetter(letter) {
         var idx = alphabet.indexOf(letter);
         var newIdx = idx + 13;
         if (newIdx >= alphabet.length) {
@@ -153,7 +153,7 @@ function cipher(text) {
         return alphabet[newIdx];
     }).join("");
     // return word.map(word, adjustLetter);
-} 
+}
 
-var encrypted = cipher('GENIUS'); 
-console.log(encrypted);
+// var encrypted = cipher('GENIUS'); 
+// console.log(encrypted);

@@ -1,0 +1,27 @@
+.nav-link img {
+    height: 5rem;
+}
+
+.container {
+    justify-content: center;
+    max-width: 60vw;
+    max-height: 80vh;
+    overflow: scroll;
+    display: flex;
+    align-items: center;
+}
+
+ul {
+    overflow: scroll;
+}
+
+.clicked {
+    border: 3px solid purple;
+    transform: scale(1.1);
+    border-radius: 3%;
+}
+
+i {
+    font-size: 3em;
+    color: grey;
+}
