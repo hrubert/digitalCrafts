@@ -1,5 +1,5 @@
 function buildPage() {
-    
+
     var title = document.createElement('title');
     title.textContent = "HighOnCoding";
     document.head.appendChild(title);
