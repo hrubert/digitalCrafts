@@ -19,38 +19,45 @@
 
             <div id="messages"></div>
             <div id="dealer">
-                <label id="dealer-name" class="display-2">Dealer: <span id="dealer-points">12</span></label>
+                <label id="dealer-name" class="display-2">Dealer:
+                    <span id="dealer-points"></span>
+                    <br>
+                    <span id="dbust"></span>                    
+                </label>
             </div>
 
             <div id="dealer-hand" class="hand row justify-content-center">
-
                 <div class="col-1">
-                    <img src="images/Red_back.jpg" alt="">
+                    <img id="hiddenCard"src="" alt="">
                 </div>
                 <div class="col-1">
-                    <img src="images/Red_back.jpg" alt="">
+                    <img src="" alt="">
                 </div>
             </div>
 
-            <label id="player-name" class="display-2">Player: <span id="player-points">21</span></label>
+            <label id="player-name" class="display-2">Player:
+                <span id="player-points"></span>
+                <br>
+                <span id="bust"></span>
+            </label>
 
 
             <div id="player-hand" class="hand row justify-content-center">
                 <div class="col-1">
-                    <img src="images/AC.jpg" alt="">
+                    <img src="" alt="">
                 </div>
                 <div class="col-1">
-                    <img src="images/10D.jpg" alt="">
+                    <img src="" alt="">
                 </div>
             </div>
 
-            <div class="buttons">
+            <div class="buttons row justify-content-center">
 
-                <button id="deal-button" class="btn-lg" data-toggle="button" aria-pressed="false" autocomplete="off">Deal</button>
+                <button id="deal-button" class="btn-lg col-1" data-toggle="button" aria-pressed="false" autocomplete="off">Deal</button>
 
-                <button id="hit-button" class="btn-lg">Hit</button>
+                <button id="hit-button" class="btn-lg col-1">Hit</button>
 
-                <button id="stand-button" class="btn-lg">Stand</button>
+                <button id="stand-button" class="btn-lg col-1">Stand</button>
 
             </div>
 

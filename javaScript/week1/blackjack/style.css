@@ -20,16 +20,17 @@ body {
 #dealer-name {
     position: absolute;
     top: 2%;
-    left: 10%;
+    left: 5%;
 }
 
 img {
     max-height: 230px;
+    border-radius: 6%;
 }
 
 #player-name{
     position: absolute;
-    left: 10%;
+    left: 5%;
     top: 50%;
 }
 
@@ -39,4 +40,18 @@ img {
 
 #dealer-hand {
     padding-top: 1%;
+}
+
+.buttons {
+    position: absolute;
+    top: 80%;
+    width: 100vw;
+}
+
+button {
+    margin: .5rem;
+}
+
+#bust, #dbust {
+    color: white;
 }
