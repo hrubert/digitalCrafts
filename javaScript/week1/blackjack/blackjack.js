@@ -3,6 +3,11 @@ var values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
 var scores = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10];
 dhand = [];
 phand = [];
+var playerMoney = 200;
+var playerBet = 5;
+var backs = ["images/blue_back.jpg", "images/Gray_back.jpg", "images/Green_back.jpg", "images/purple_back.jpg", "images/Red_bacl.jpg", "images/Yellow_back.jpg"];
+var dealerBack;
+var cardSound = new Audio("sounds/card.wav");
 
 function getDeck() {
     var deck = [];
@@ -16,6 +21,7 @@ function getDeck() {
             deck.push(card);
         }
     }
+    dealerBack = backs[Math.floor(Math.random() * backs.length)];
     return deck;
 }
 
@@ -41,16 +47,44 @@ function calculatePoints(arr) {
     return score;
 }
 
+document.querySelector("#red").addEventListener("click", function () {
+    playerBet = 5;
+    document.querySelector("#red").style.border = "3px solid white";
+    document.querySelector("#blue").style.border = "";
+    document.querySelector("#green").style.border = "";
+}, false);
+
+document.querySelector("#blue").addEventListener("click", function () {
+    playerBet = 10;
+    document.querySelector("#blue").style.border = "3px solid white";
+    document.querySelector("#red").style.border = "";
+    document.querySelector("#green").style.border = "";
+}, false);
+
+document.querySelector("#green").addEventListener("click", function () {
+    playerBet = 20;
+    document.querySelector("#green").style.border = "3px solid white";
+    document.querySelector("#blue").style.border = "";
+    document.querySelector("#red").style.border = "";
+}, false);
+
+
 document.getElementById("deal-button").addEventListener("click", function () {
+    var chips = document.querySelectorAll("#money div");
+    for (let i = 0; i < chips.length; i++) {
+        chips[i].style.visibility = "hidden";
+    }
     checkCards();
     var dealerCards = document.querySelectorAll("#dealer-hand div img");
     for (var i = 0; i < dealerCards.length; i++) {
         let nextCard = deck.pop();
         dhand.push(nextCard);
         if (i == 0) {
-            dealerCards[i].setAttribute("src", "images/Red_back.jpg");
+            dealerCards[i].setAttribute("src", dealerBack);
+            cardSound.play();
         } else {
             dealerCards[i].setAttribute("src", getCardImg(nextCard));
+            cardSound.play();            
         }
     }
     var playerCards = document.querySelectorAll("#player-hand div img");
@@ -58,9 +92,12 @@ document.getElementById("deal-button").addEventListener("click", function () {
         let nextCard = deck.pop();
         phand.push(nextCard);
         playerCards[i].setAttribute("src", getCardImg(nextCard));
+        cardSound.play();        
     }
     document.getElementById("player-points").textContent = calculatePoints(phand);
     document.getElementById("deal-button").disabled = true;
+    document.getElementById("hit-button").disabled = false;
+    document.getElementById("stand-button").disabled = false;
 }, false);
 
 
@@ -73,6 +110,7 @@ document.getElementById("hit-button").addEventListener("click", function () {
     let newImg = document.createElement("img");
     let nextCard = deck.pop();
     phand.push(nextCard);
+    cardSound.play();    
     newImg.setAttribute("src", getCardImg(nextCard));
     newDiv.appendChild(newImg);
     document.getElementById("player-points").textContent = calculatePoints(phand);
@@ -101,6 +139,7 @@ document.getElementById("stand-button").addEventListener("click", function () {
         let newImg = document.createElement("img");
         let nextCard = deck.pop();
         dhand.push(nextCard);
+        cardSound.play();        
         newImg.setAttribute("src", getCardImg(nextCard));
         newDiv.appendChild(newImg);
         if (calculatePoints(dhand) > 21) {
@@ -117,16 +156,26 @@ document.getElementById("stand-button").addEventListener("click", function () {
 
 function determineWinner(player, dealer) {
     document.getElementById("hiddenCard").setAttribute("src", getCardImg(dhand[0]));
+    cardSound.play();    
     document.getElementById("dealer-points").textContent = dealer;
     if (dealer > 21) {
         document.querySelector("#bust").textContent = "YOU WIN";
+        playerMoney += playerBet;
     } else if (player > 21) {
         document.querySelector("#bust").textContent = "BUST!";
+        playerMoney -= playerBet;
     } else if (player > dealer) {
         document.querySelector("#bust").textContent = "YOU WIN!";
+        playerMoney += playerBet;
     } else {
         document.querySelector("#dbust").textContent = "DEALER WINS!";
+        playerMoney -= playerBet;
     }
+    playerBet = 5;
+    document.getElementById("playerMoney").innerText = playerMoney;
+    document.getElementById("deal-button").disabled = false;
+    document.getElementById("hit-button").disabled = true;
+    document.getElementById("stand-button").disabled = true;
     setTimeout(function () {
         var playerCards = document.querySelectorAll("#player-hand div img");
         var dealerCards = document.querySelectorAll("#dealer-hand div img");
@@ -148,9 +197,15 @@ function determineWinner(player, dealer) {
         for (let i = 2; i < ddivs.length; i++) {
             ddivs[i].parentNode.removeChild(ddivs[i]);
         }
-        document.getElementById("deal-button").disabled = false;
-        document.getElementById("hit-button").disabled = false;
-    }, 3000);
+        var chips = document.querySelectorAll("#money");
+        document.querySelector("#green").style.border = "";
+        document.querySelector("#blue").style.border = "";
+        document.querySelector("#red").style.border = "";
+        var chips = document.querySelectorAll("#money div");
+        for (let i = 0; i < chips.length; i++) {
+            chips[i].style.visibility = "visible";
+        }
+    }, 2000);
 
 
 }
