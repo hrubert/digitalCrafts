@@ -250,5 +250,5 @@ function determineWinner(player, dealer) {
         for (let i = 0; i < chips.length; i++) {
             chips[i].style.visibility = "visible";
         }
-    }, 5000);
+    }, 2000);
 }
