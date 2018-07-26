@@ -43,8 +43,8 @@ Hand.prototype.hasAce = function () {
             this.hand[i].point = 1;
             acePresent = true;
         }
-        return acePresent;
     }
+    return acePresent;
 }
 
 
@@ -97,157 +97,153 @@ phand = new Hand();
 var playDeck = new Deck();
 playDeck.shuffle();
 
-document.querySelector("#red").addEventListener("click", function () {
+$("#red").click(function () {
     playerBet = 5;
-    document.querySelector("#red").style.border = "3px solid white";
-    document.querySelector("#blue").style.border = "";
-    document.querySelector("#green").style.border = "";
-}, false);
+    $("#playerMoney").text(playerMoney - playerBet);
+    $("#money").fadeOut("slow");
+});
 
-document.querySelector("#blue").addEventListener("click", function () {
+$("#blue").click(function () {
     playerBet = 10;
-    document.querySelector("#blue").style.border = "3px solid white";
-    document.querySelector("#red").style.border = "";
-    document.querySelector("#green").style.border = "";
-}, false);
+    $("#playerMoney").text(playerMoney - playerBet);
+    $("#money").fadeOut("slow");
+});
 
-document.querySelector("#green").addEventListener("click", function () {
+$("#green").click(function () {
     playerBet = 20;
-    document.querySelector("#green").style.border = "3px solid white";
-    document.querySelector("#blue").style.border = "";
-    document.querySelector("#red").style.border = "";
-}, false);
+    $("#playerMoney").text(playerMoney - playerBet);
+    $("#money").fadeOut("slow");
+});
 
-
-document.getElementById("deal-button").addEventListener("click", function () {
-    var chips = document.querySelectorAll("#money div");
-    for (let i = 0; i < chips.length; i++) {
-        chips[i].style.visibility = "hidden";
-    }
+$("#deal-button").click(function () {
+    $("#money").hide();
     playDeck.checkCards();
-    var dealerCards = document.querySelectorAll("#dealer-hand div img");
-    for (var i = 0; i < dealerCards.length; i++) {
+    var $dealerCards = $("#dealer-hand div img");
+    $($dealerCards).hide();
+    for (var i = 0; i < $dealerCards.length; i++) {
         let nextCard = playDeck.draw();
         dhand.addCard(nextCard);
         if (i == 0) {
-            dealerCards[i].setAttribute("src", dealerBack);
+            $($dealerCards[i]).attr("src", dealerBack).fadeIn(1000);
             cardSound.play();
         } else {
-            dealerCards[i].setAttribute("src", nextCard.getImageUrl());
+            $($dealerCards[i]).attr("src", nextCard.getImageUrl()).fadeIn(1000);
             cardSound.play();
         }
     }
-    var playerCards = document.querySelectorAll("#player-hand div img");
+    var $playerCards = $("#player-hand div img");
+    $($playerCards).hide();
     for (var i = 0; i < 2; i++) {
         let nextCard = playDeck.draw();
         phand.addCard(nextCard);
-        playerCards[i].setAttribute("src", nextCard.getImageUrl());
+        $($playerCards[i]).attr("src", nextCard.getImageUrl()).fadeIn(1000);
         cardSound.play();
     }
-    document.getElementById("player-points").textContent = phand.getPoints();
-    document.getElementById("deal-button").disabled = true;
-    document.getElementById("hit-button").disabled = false;
-    document.getElementById("stand-button").disabled = false;
-}, false);
+    $("#player-points").text(phand.getPoints());
+
+    $("#deal-button").attr("disabled", "disabled");
+    $("#hit-button").removeAttr("disabled");
+    $("#stand-button").removeAttr("disabled");
+});
 
 
-document.getElementById("hit-button").addEventListener("click", function () {
+$("#hit-button").click(function () {
     playDeck.checkCards();
-    let playerDiv = document.querySelector("#player-hand");
-    let newDiv = document.createElement("div");
-    newDiv.classList = "col-1";
-    playerDiv.appendChild(newDiv);
-    let newImg = document.createElement("img");
+    let $playerDiv = $("#player-hand");
+    let $newDiv = $("<div>", {
+        "class": "col-1",
+    });
+    $newDiv.hide()
+    $playerDiv.append($newDiv);
+    let $newImg = $("<img>");
     let nextCard = playDeck.draw();
     phand.addCard(nextCard);
     cardSound.play();
-    newImg.setAttribute("src", nextCard.getImageUrl());
-    newDiv.appendChild(newImg);
-    document.getElementById("player-points").textContent = phand.getPoints();
+    $newImg.attr("src", nextCard.getImageUrl());
+    $newDiv.append($newImg).fadeIn(1000);
+    $("#player-points").text(phand.getPoints());
     if (phand.getPoints() > 21 && phand.hasAce()) {
         phand.getPoints();
+        $("#player-points").text(phand.getPoints());
         document.getElementById("player-points").textContent = phand.getPoints();
     }
     if (phand.getPoints() > 21) {
         determineWinner(phand.getPoints(), dhand.getPoints());
     }
 
-}, false);
+});
 
 
-document.getElementById("stand-button").addEventListener("click", function () {
+$("#stand-button").click(function () {
     playDeck.checkCards();
-    document.getElementById("hit-button").disabled = true;
-    while (true) {
-        let dealerDiv = document.querySelector("#dealer-hand");
-        let newDiv = document.createElement("div");
-        newDiv.classList = "col-1";
-        dealerDiv.appendChild(newDiv);
-        let newImg = document.createElement("img");
+    $("#hit-button").attr("disabled", "disabled");
+    while (dhand.getPoints() < 17) {
+        let $dealerDiv = $("#dealer-hand");
+        let $newDiv = $("<div>", {
+            "class": "col-1"
+        });
+        $newDiv.hide();
+        $dealerDiv.append($newDiv);
+        let $newImg = $("<img>");
         let nextCard = playDeck.draw();
         dhand.addCard(nextCard);
         cardSound.play();
-        newImg.setAttribute("src", nextCard.getImageUrl());
-        newDiv.appendChild(newImg);
+        $newImg.attr("src", nextCard.getImageUrl());
+        $newDiv.append($newImg);
+        $newDiv.fadeIn(1000);
         if (dhand.getPoints() > 21 && dhand.hasAce()) {
             dhand.getPoints();
-        } else if (dhand.getPoints() > 17) {
-            break;
         }
     }
     determineWinner(phand.getPoints(), dhand.getPoints());
-}, false);
+});
+
 
 function determineWinner(player, dealer) {
-    document.getElementById("hiddenCard").setAttribute("src", dhand.hand[0].getImageUrl());
+    $("#hiddenCard").attr("src", dhand.hand[0].getImageUrl());
     cardSound.play();
-    document.getElementById("dealer-points").textContent = dealer;
+    $("#dealer-points").text(dealer);
     if (dealer > 21) {
-        document.querySelector("#bust").textContent = "YOU WIN";
+        $("#bust").text("YOU WIN");
         playerMoney += playerBet;
     } else if (player > 21) {
-        document.querySelector("#bust").textContent = "BUST!";
+        $("#bust").text("BUST!");
         playerMoney -= playerBet;
     } else if (player > dealer) {
-        document.querySelector("#bust").textContent = "YOU WIN!";
+        $("#bust").text("YOU WIN!");
         playerMoney += playerBet;
     } else {
-        document.querySelector("#dbust").textContent = "DEALER WINS!";
+        $("#dbust").text("DEALER WINS!");
         playerMoney -= playerBet;
     }
     playerBet = 5;
-    document.getElementById("playerMoney").innerText = playerMoney;
-    document.getElementById("deal-button").disabled = false;
-    document.getElementById("hit-button").disabled = true;
-    document.getElementById("stand-button").disabled = true;
+    $("#playerMoney").text(playerMoney);
+    $("#deal-button").removeAttr("disabled");
+    $("#hit-button").attr("disabled", "disabled");
+    $("#stand-button").attr("disabled", "disabled");
     setTimeout(function () {
-        var playerCards = document.querySelectorAll("#player-hand div img");
-        var dealerCards = document.querySelectorAll("#dealer-hand div img");
+        let $playerCards = $("#player-hand div img");
+        let $dealerCards = $("#dealer-hand div img");
         dhand.hand = [];
         phand.hand = [];
         for (let i = 0; i < 2; i++) {
-            playerCards[i].setAttribute("src", "");
-            dealerCards[i].setAttribute("src", "");
+            $($playerCards[i]).hide()
+            $($dealerCards[i]).hide()
         }
-        document.getElementById("player-points").textContent = "";
-        document.getElementById("dealer-points").textContent = "";
-        document.querySelector("#bust").textContent = "";
-        document.querySelector("#dbust").textContent = "";
-        var pdivs = document.querySelectorAll("#player-hand div");
-        for (let i = 2; i < pdivs.length; i++) {
-            pdivs[i].parentNode.removeChild(pdivs[i]);
+        $("#player-points").text("");
+        $("#dealer-points").text("");
+        $("#bust").text("");
+        $("#dbust").text("");
+        let $pdivs = $("#player-hand div");
+        for (let i = 2; i < $pdivs.length; i++) {
+            $pdivs[i].remove();
         }
-        var ddivs = document.querySelectorAll("#dealer-hand div");
-        for (let i = 2; i < ddivs.length; i++) {
-            ddivs[i].parentNode.removeChild(ddivs[i]);
+        let $ddivs = $("#dealer-hand div");
+        for (let i = 2; i < $ddivs.length; i++) {
+            $ddivs[i].remove();
         }
-        var chips = document.querySelectorAll("#money");
-        document.querySelector("#green").style.border = "";
-        document.querySelector("#blue").style.border = "";
-        document.querySelector("#red").style.border = "";
-        var chips = document.querySelectorAll("#money div");
-        for (let i = 0; i < chips.length; i++) {
-            chips[i].style.visibility = "visible";
-        }
-    }, 2000);
+
+        $("#money").fadeIn("slow");
+
+    }, 3000);
 }
