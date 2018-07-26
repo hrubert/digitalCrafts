@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        .line {
+          text-decoration: line-through;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+    /* doubleclick to remove event
+    4. the ability to edit an existing task
+    */
+    $(document).ready(function () {
+      $("#add-button").click(function () { 
+        let $task = $("#description").val();
+        let $newLi = $("<li>")
+        $newLi.html("<input type='checkbox'>" + $task + '<button id="#edit">edit</button>');
+        $('#todo-list').append($newLi);
+      });
+
+      $("#rem-button").click(function (e) { 
+        $("#description").val("");
+        
+      });
+
+      $("ul").on("click", "[type='checkbox']", function (e) { 
+        $(e.target.parentNode).toggleClass('line');
+      })
+
+      $("ul").on("dblclick", "li", function (e) { 
+        $(e.target).remove();
+      })
+
+      $(".edit").on("click", function (e) {
+        let $newText = prompt("Enter new text:");
+        $(e.target.parentNode).html("<input type='checkbox'>" + $newText + '<button id="#edit">edit</button>');
+        // console.log(e.target.parentNode);
+      });
+    });
+    </script>
+
+    <style>
+    #wrapper {
+      max-width: 480px;
+      margin: auto;
+    }
+
+    #description, #search, #todo-list {
+      font-size: 1.5em;
+      list-style-type: none;
+    }
+
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <input id="description" type="text" name="description">
+      <button id="add-button">Add Task</button>
+      <button id="rem-button" style="background-color: red">X</button>
+      <ul id="todo-list">
+        <li><input type='checkbox'>Feed the cat<button class="edit">edit</button></li>
+      </ul>
+    </div>
+  </body>
+</html>
