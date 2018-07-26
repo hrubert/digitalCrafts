@@ -9,61 +9,61 @@ const values = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'
 
 
 class Card {
-    constructor (point, suit, value) {
-    this.point = point;
-    this.suit = suit;
-    this.value = value;
+    constructor(point, suit, value) {
+        this.point = point;
+        this.suit = suit;
+        this.value = value;
     }
 }
 
-Card.prototype.getImageUrl = function() {
+Card.prototype.getImageUrl = function () {
     return `images/${this.value +this.suit}.jpg`;
 }
 
 class Hand {
     constructor() {
-    this.hand = [];
+        this.hand = [];
     }
 }
 
-Hand.prototype.addCard = function(card) {
+Hand.prototype.addCard = function (card) {
     this.hand.push(card);
 }
 
-Hand.prototype.getPoints = function() {
+Hand.prototype.getPoints = function () {
     let sum = 0;
     this.hand.forEach(x => sum += x.point);
     return sum;
 }
 
-Hand.prototype.hasAce = function() {
+Hand.prototype.hasAce = function () {
     let acePresent = false;
     for (let i = 0; i < this.hand.length; i++) {
         if (this.hand[i].value == "A") {
             this.hand[i].point = 1;
             acePresent = true;
-    }
-    return acePresent;
+        }
+        return acePresent;
     }
 }
 
 
-class Deck{
+class Deck {
     constructor() {
-    this.deck = [];
-    for (var i = 0; i < suits.length; i++) {
-        for (var j = 0; j < points.length; j++) {
-            this.deck.push(new Card(points[j], suits[i], values[j]));
+        this.deck = [];
+        for (var i = 0; i < suits.length; i++) {
+            for (var j = 0; j < points.length; j++) {
+                this.deck.push(new Card(points[j], suits[i], values[j]));
+            }
         }
     }
-    }
 }
 
-Deck.prototype.draw = function() {
+Deck.prototype.draw = function () {
     return this.deck.pop();
 }
-    
-Deck.prototype.shuffle = function(){
+
+Deck.prototype.shuffle = function () {
     let array = this.deck;
     for (var i = array.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
@@ -75,11 +75,11 @@ Deck.prototype.shuffle = function(){
     dealerBack = backs[Math.floor(Math.random() * backs.length)];
 }
 
-Deck.prototype.numCardsLeft = function() {
+Deck.prototype.numCardsLeft = function () {
     return this.deck.length;
 }
-    
-Deck.prototype.checkCards = function() {
+
+Deck.prototype.checkCards = function () {
     if (this.deck.length < 5) {
         for (var i = 0; i < suits.length; i++) {
             for (var j = 0; j < points.length; j++) {
@@ -89,7 +89,7 @@ Deck.prototype.checkCards = function() {
         this.shuffle();
         dealerBack = backs[Math.floor(Math.random() * backs.length)];
     }
-    
+
 }
 
 dhand = new Hand();
@@ -134,7 +134,7 @@ document.getElementById("deal-button").addEventListener("click", function () {
             cardSound.play();
         } else {
             dealerCards[i].setAttribute("src", nextCard.getImageUrl());
-            cardSound.play();            
+            cardSound.play();
         }
     }
     var playerCards = document.querySelectorAll("#player-hand div img");
@@ -142,7 +142,7 @@ document.getElementById("deal-button").addEventListener("click", function () {
         let nextCard = playDeck.draw();
         phand.addCard(nextCard);
         playerCards[i].setAttribute("src", nextCard.getImageUrl());
-        cardSound.play();        
+        cardSound.play();
     }
     document.getElementById("player-points").textContent = phand.getPoints();
     document.getElementById("deal-button").disabled = true;
@@ -160,25 +160,25 @@ document.getElementById("hit-button").addEventListener("click", function () {
     let newImg = document.createElement("img");
     let nextCard = playDeck.draw();
     phand.addCard(nextCard);
-    cardSound.play();    
+    cardSound.play();
     newImg.setAttribute("src", nextCard.getImageUrl());
     newDiv.appendChild(newImg);
     document.getElementById("player-points").textContent = phand.getPoints();
     if (phand.getPoints() > 21 && phand.hasAce()) {
         phand.getPoints();
-        document.getElementById("player-points").textContent = phand.getPoints();   
+        document.getElementById("player-points").textContent = phand.getPoints();
     }
     if (phand.getPoints() > 21) {
-            determineWinner(phand.getPoints(), dhand.getPoints());
-     }
-       
+        determineWinner(phand.getPoints(), dhand.getPoints());
+    }
+
 }, false);
 
 
 document.getElementById("stand-button").addEventListener("click", function () {
     playDeck.checkCards();
     document.getElementById("hit-button").disabled = true;
-    while (true){
+    while (true) {
         let dealerDiv = document.querySelector("#dealer-hand");
         let newDiv = document.createElement("div");
         newDiv.classList = "col-1";
@@ -186,13 +186,12 @@ document.getElementById("stand-button").addEventListener("click", function () {
         let newImg = document.createElement("img");
         let nextCard = playDeck.draw();
         dhand.addCard(nextCard);
-        cardSound.play();        
+        cardSound.play();
         newImg.setAttribute("src", nextCard.getImageUrl());
         newDiv.appendChild(newImg);
         if (dhand.getPoints() > 21 && dhand.hasAce()) {
             dhand.getPoints();
-        }
-        else if (dhand.getPoints() > 17) {
+        } else if (dhand.getPoints() > 17) {
             break;
         }
     }
@@ -201,7 +200,7 @@ document.getElementById("stand-button").addEventListener("click", function () {
 
 function determineWinner(player, dealer) {
     document.getElementById("hiddenCard").setAttribute("src", dhand.hand[0].getImageUrl());
-    cardSound.play();    
+    cardSound.play();
     document.getElementById("dealer-points").textContent = dealer;
     if (dealer > 21) {
         document.querySelector("#bust").textContent = "YOU WIN";

@@ -2,7 +2,7 @@
 
 function counter() {
     let i = 0;
-    return function() { 
+    return function () {
         i++;
         console.log(i);
     };
@@ -20,7 +20,7 @@ function counter() {
 
 function counter(count) {
     let i = count;
-    return function() { 
+    return function () {
         i++;
         console.log(i);
     };
@@ -32,13 +32,15 @@ function counter(count) {
 
 function counter(count) {
     let i = count;
-    return {increment: function() {
-        i++;
-        console.log(i);
-    }, decrement: function() {
-        i--;
-        console.log(i);
-    }
+    return {
+        increment: function () {
+            i++;
+            console.log(i);
+        },
+        decrement: function () {
+            i--;
+            console.log(i);
+        }
     }
 }
 

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">
+
+    </div>
+    <a href="" id="myLink">myLink</a>
+
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+
+    <script>
+        //old
+        $(document).ready(function () {
+            let $myLink = $('#myLink');
+            // to look for a specific element
+            $('[data-image="target"]')
+
+            console.log($myLink);
+
+            // creating new anchor tags with attributes
+            var $anchor = $('<a>', {
+                'class': 'nav-item',
+                'data-image': 'trigger',
+                'text': 'Click me!',
+                'href': 'http://www.tracy-herbert.com'
+            });
+
+            // append element
+            // $myLink.append($anchor);
+
+            // append before
+            $myLink.before($anchor);
+
+            $body = $('body');
+
+            var $myDiv = $('div', {
+                'class': 'myDiv'
+            });
+
+            $myDiv.addClass('yellow');
+            
+            $body.after($myLink);
+            
+            $('button').on('mouseover', (e) => {
+                $myDiv.addClass('yellow');
+            });
+        });
+        //new way
+        // $(
+        //     //code block
+        // )
+
+    </script>
+
+</body>
+
+</html>
