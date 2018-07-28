@@ -1,10 +1,3 @@
-// function to check primes //
-// pass in odd numbers
-// if prime, skip, add to prime list
-// otherwise check it
-
-// subtract prime, divide by 2, see if that is a square 
-
 function isPrime(num) {
     let factor = 2;
     while (factor < num) {
@@ -16,7 +9,7 @@ function isPrime(num) {
     return true;
 }
 
-function christianIsWrong(num) {  
+function christianIsWrong(num) {
     for (let i = 0; i < primeList.length; i++) {
         let tNum = num - primeList[i];
         tNum /= 2;
@@ -27,9 +20,8 @@ function christianIsWrong(num) {
     return true;
 }
 
-
 var primeList = [];
-for (let i = 3; i < 10000; i +=2) {
+for (let i = 3; i < 10000; i += 2) {
     if (isPrime(i)) {
         primeList.push(i);
     } else {
@@ -39,6 +31,3 @@ for (let i = 3; i < 10000; i +=2) {
         }
     }
 }
-
-
-
