@@ -1,0 +1,17 @@
+li {
+    display: inline-block;
+    width: 20em;
+    font-weight: bold;
+}
+
+footer {
+    position: absolute;
+    bottom: 0em;
+    padding: 0.25em;
+    font-size: 0.9em;
+}
+
+p {
+    font-style: italic;
+    font-weight: 100;
+}
