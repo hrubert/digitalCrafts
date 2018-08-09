@@ -16,9 +16,7 @@ rl.question("URL: ", function (answer) {
         htmlText = html;
     });
     rl.close();
-    setTimeout(function () {
-        saveText(htmlText);
-    }, 1000);
+    saveText(htmlText);
 });
 
 
