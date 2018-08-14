@@ -1,0 +1,85 @@
+{
+    "breeds": [{
+        "name": "Exotic Shorthair",
+        "lifespan": "12-15 years",
+        "personality": "Lovely, warm, sweet",
+        "img": "exotic_shorthair.jpg"
+    }, {
+        "name": "Persian",
+        "lifespan": "14-15 years",
+        "personality": "Gentle, quiet, sensitive",
+        "img": "persian.jpg"
+    }, {
+        "name": "Maine Coon",
+        "lifespan": "12-15 years",
+        "personality": "Intelligent, independent, gentle",
+        "img": "maine_coon.jpg"
+    }, {
+        "name": "Ragdoll",
+        "lifespan": "12-17 years",
+        "personality": "Gentle, quiet, friendly",
+        "img": "ragdoll.jpg"
+    }, {
+        "name": "British Shorthair",
+        "lifespan": "12-17 years",
+        "personality": "Easy-going, loyal, patient",
+        "img": "british_shorthair.jpg"
+    }, {
+        "name": "American Shorthair",
+        "lifespan": "15-17 years",
+        "personality": "Active, curious, playful",
+        "img": "american_shorthair.jpg"
+    }, {
+        "name": "Abyssinian",
+        "lifespan": "14-15 years",
+        "personality": "Energetic, independent, intelligent",
+        "img": "abyssinian.jpg"
+    }, {
+        "name": "Sphynx",
+        "lifespan": "12-14 years",
+        "personality": "Gentle, quiet, friendly",
+        "img": "sphynx.jpg"
+    }, {
+        "name": "Siamese",
+        "lifespan": "12-15 years",
+        "personality": "Lively, active, smart",
+        "img": "siamese.jpg"
+    }, {
+        "name": "Scottish Fold",
+        "lifespan": "11-14 years",
+        "personality": "Affectionate, intelligent, loyal",
+        "img": "scottish_fold.jpg"
+    }, {
+        "name": "Cornish Rex",
+        "lifespan": "11-14 years",
+        "personality": "Playful, affectionate, intelligent",
+        "img": "cornish_rex.jpg"
+    }, {
+        "name": "Devon Rex",
+        "lifespan": "10-15 years",
+        "personality": "Loyal, playful, social",
+        "img": "devon_rex.jpg"
+    }, {
+        "name": "Oriental",
+        "lifespan": "12-14 years",
+        "personality": "Curious, intelligent, social",
+        "img": "oriental.jpg"
+    }, {
+        "name": "Norwegian Forest Cat",
+        "lifespan": "12-16 years",
+        "personality": "Curious, intelligent, loving",
+        "img": "norwegian.jpg"
+    }, {
+        "name": "Birman",
+        "lifespan": "14-15 years",
+        "personality": "Gentle, kind, loving",
+        "img": "birman.jpg"
+    }, {
+        "name": "Burmese",
+        "lifespan": "15-16 years",
+        "personality": "Curious, intelligent, interactive",
+        "img": "burmese.jpg"
+    }
+
+    ]
+}
