@@ -13,8 +13,14 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 
+<div class="content">
+
+<% include partials/header.ejs %>
+
 <body>
-    <h1 class="display-2 mb-5">All Cats</h1>
+    <h1 class="display-2 mb-2
+    ">All Cats</h1>
+    <h4 class="text-center">Click to hide unwanted cats</h4>
     <div class="card-columns text-center">
         <% catList.forEach(element => { %>
             <div class="card">
@@ -24,7 +30,7 @@
                         <%= element.name %>
                     </h5>
                     <p class="card-text">
-                        <%= element.lifespan %>
+                        Lifespan: <%= element.lifespan %>
                     </p>
                     <p class="card-text">
                         <%= element.personality %>
@@ -33,12 +39,10 @@
             </div>
             <% }); %>
     </div>
-    <div class="text-center p-5">
-        <button type="button" class="btn btn-outline-primary">
-            <a href="/">Home</a>
-        </button>
-    </div>
+</div>
+<% include partials/footer.ejs %>
 
+ </body>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -47,6 +51,13 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
         crossorigin="anonymous"></script>
+    <script>
+        $(
+            $(".card").click(function () { 
+                $(this).hide();
+            })
+        )
+    </script>
 </body>
 
 </html>

@@ -6,7 +6,8 @@ router.get("/", (req, res, next) => {
    
     res.render('index', {
         randomCat: Math.floor(Math.random() * dataFile.breeds.length),
-        catList: dataFile.breeds
+        catList: dataFile.breeds,
+        randNum: Math.floor(Math.random() * dataFile.breeds.length)          
     });
 });
 

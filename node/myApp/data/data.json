@@ -204,6 +204,76 @@
         "lifespan": "14-18 years",
         "personality": "Family, lively, outgoing",
         "img": "american_wirehair.jpg"
+    } , {
+        "name": "Bengal",
+        "lifespan": "12-16 years",
+        "personality": "Agile, Family, Inquisitive",
+        "img": "bengal.jpg"
+    } , {
+        "name": "California Spangled",
+        "lifespan": "10-14 years",
+        "personality": "Curious, intelligent, loyal",
+        "img": "california_spangled.jpg"
+    } , {
+        "name": "Cymric",
+        "lifespan": "8-14 years",
+        "personality": "Gentle, intelligent, loyal",
+        "img": "cymric.jpg"
+    } , {
+        "name": "Himalayan",
+        "lifespan": "9-15 years",
+        "personality": "Gentle, intelligent, quiet",
+        "img": "himalayan.jpg"
+    } , {
+        "name": "Munchkin",
+        "lifespan": "10-15 years",
+        "personality": "Agile, intelligent, easy-going",
+        "img": "munchkin.jpg"
+    } , {
+        "name": "Nebelung",
+        "lifespan": "11-16 years",
+        "personality": "Gentle, quiet, shy",
+        "img": "nebelung.jpg"
+    } , {
+        "name": "Pixie-bob",
+        "lifespan": "13-16 years",
+        "personality": "Affectionate, intelligent, sociable",
+        "img": "pixie_bob.jpg"
+    } , {
+        "name": "Savannah",
+        "lifespan": "11-20 years",
+        "personality": "Curious, intelligent, loyal",
+        "img": "savannah.jpg"
+    } , {
+        "name": "Snowshoe",
+        "lifespan": "14-19 years",
+        "personality": "Affectionate, intelligent, social",
+        "img": "snowshoe.jpg"
+    } , {
+        "name": "Toyger",
+        "lifespan": "12-15 years",
+        "personality": "Intelligent, playful, social",
+        "img": "toyger.jpg"
+    } , {
+        "name": "York Chocolate",
+        "lifespan": "13-15 years",
+        "personality": "Intelligent, playful, curious",
+        "img": "york_chocolate.jpg"
+    } , {
+        "name": "Aegean",
+        "lifespan": "9-12 years",
+        "personality": "Affectionate, intelligent, playful",
+        "img": "aegean.jpg"
+    } , {
+        "name": "Australian Mist",
+        "lifespan": "12-16 years",
+        "personality": "Intelligent, friendly",
+        "img": "australian_mist.jpg"
+    } , {
+        "name": "American Polydactyl",
+        "lifespan": "14-16 years",
+        "personality": "Intelligent, playful, social",
+        "img": "american_polydactyl.jpg"
     } 
 
     ]

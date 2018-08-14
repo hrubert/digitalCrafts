@@ -19,6 +19,36 @@ ul {
     max-width: 400px;
 }
 
-.card-columns, .bg {
+
+
+blockquote {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
     background-color: lightgray;
+    padding: 10px;    
+}
+
+nav {
+    background-color: darkgrey;
+}
+
+nav > a {
+    color: white;
+}
+
+h3 {
+    color: navy;
+}
+
+.content {
+    min-height: calc(100vh - 60px);
+}
+
+footer {
+    background-color: black;
+    color: white;
+    height: 50px;
+    padding: 10px;
+    text-align: right;
 }

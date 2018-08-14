@@ -5,31 +5,20 @@ router.get("/breeds/?", (req, res) => {
     let dataFile = req.app.get("catData");
 
     res.render('allCats', {
-        catList: dataFile.breeds
+        catList: dataFile.breeds,
+        randNum: Math.floor(Math.random() * dataFile.breeds.length)  
     })
 })
 
 router.get("/breeds/:breedID", (req, res) => {
     let dataFile = req.app.get("catData");
+    let catFacts = req.app.get("catFacts");
 
     res.render('oneCat', {
-        oneCat: dataFile.breeds[req.params.breedID]
+        oneCat: dataFile.breeds[req.params.breedID],
+        catFact: catFacts[Math.floor(Math.random() * catFacts.length)],
+        randNum: Math.floor(Math.random() * dataFile.breeds.length)
     })
-    // res.send(`<ul>${pageHTML}</ul>
-    //     <a href="/"><button>Home</button></a>`);
-
-    // if (req.params.breedID < dataFile.breeds.length) {
-    //     let breed = dataFile.breeds[req.params.breedID];  
-    //     pageHTML += (`
-    //         <li style="list-style: none;">
-    //         <h2>${breed.name}</h2>
-    //         <p>Lifespan: ${breed.lifespan}</p>
-    //         <p>Personality: ${breed.personality}</p>
-    //         <img src="/images/${breed.img}" alt="picture of breed" >
-    //         <br>
-    //         </li>
-    //     `);
-    // }
 });
 
 module.exports = router;
