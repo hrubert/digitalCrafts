@@ -79,7 +79,132 @@
         "lifespan": "15-16 years",
         "personality": "Curious, intelligent, interactive",
         "img": "burmese.jpg"
-    }
+    }, {
+        "name": "Siberian",
+        "lifespan": "12-15 years",
+        "personality": "Agile, intelligent, loyal",
+        "img": "siberian.jpg"
+    }, {
+        "name": "Tonkinese",
+        "lifespan": "14-16 years",
+        "personality": "Curious, intelligent, lively",
+        "img": "tonkinese.jpg"
+    }, {
+        "name": "Russian Blue",
+        "lifespan": "10-16 years",
+        "personality": "Easy-going, intelligent, loyal",
+        "img": "russian_blue.jpg"
+    } , {
+        "name": "Egyptian Mau",
+        "lifespan": "18-20 years",
+        "personality": "Agile, intelligent, loyal",
+        "img": "egyptian_mau.jpg"
+    } , {
+        "name": "Ocicat",
+        "lifespan": "12-14 years",
+        "personality": "Active, agile, demanding",
+        "img": "ocicat.jpg"
+    }, {
+        "name": "Singapura",
+        "lifespan": "12-15 years",
+        "personality": "Curious, easy-going, family",
+        "img": "singapura.jpg"
+    }, {
+        "name": "Manx",
+        "lifespan": "12-14 years",
+        "personality": "Easy-going, intelligent, loyal",
+        "img": "manx.jpg"
+    }, {
+        "name": "Japanese Bobtail",
+        "lifespan": "14-16 years",
+        "personality": "Family, lively, loyal",
+        "img": "japanese_bobtail.jpg"
+    } , {
+        "name": "Selkirk Rex",
+        "lifespan": "14-15 years",
+        "personality": "Dependent, loving, patient",
+        "img": "selkirk_rex.jpg"
+    } , {
+        "name": "American Curl",
+        "lifespan": "12-16 years",
+        "personality": "Lively, interactive, loving",
+        "img": "american_curl.jpg"
+    } , {
+        "name": "Chartreux",
+        "lifespan": "12-15 years",
+        "personality": "Loyal, highlyintelligent, loving",
+        "img": "chartreux.jpg"
+    } , {
+        "name": "Somali",
+        "lifespan": "12-16 years",
+        "personality": "Curious, interactive, loyal",
+        "img": "somali.jpg"
+    } , {
+        "name": "Turkish Angora",
+        "lifespan": "15-18 years",
+        "personality": "Intelligent, playful, gentle",
+        "img": "turkish_angora.jpg"
+    } , {
+        "name": "Colorpoint Shorthair",
+        "lifespan": "12-16 years",
+        "personality": "Affectionate, intelligent, playful",
+        "img": "colorpoint_shorthair.jpg"
+    } , {
+        "name": "Balinese",
+        "lifespan": "10-15 years",
+        "personality": "Playful, intelligent, loving",
+        "img": "balinese.jpg"
+    } , {
+        "name": "Ragamuffin",
+        "lifespan": "12-16 years",
+        "personality": "Affectionate, friendly, gentle",
+        "img": "ragamuffin.jpg"
+    } , {
+        "name": "European Burmese",
+        "lifespan": "10-15 years",
+        "personality": "Affectionate, loyal, sweet",
+        "img": "european_burmese.jpg"
+    } , {
+        "name": "Bombay",
+        "lifespan": "12-16 years",
+        "personality": "Intelligent, loving, playful",
+        "img": "bombay.jpg"
+    } , {
+        "name": "Havana Brown",
+        "lifespan": "10-15 years",
+        "personality": "Curious, intelligent, demanding",
+        "img": "havana_brown.jpg"
+    } , {
+        "name": "American Bobtail",
+        "lifespan": "11-15 years",
+        "personality": "Interactive, Highly intelligent, lively",
+        "img": "american_bobtail.jpg"
+    } , {
+        "name": "Turkish Van",
+        "lifespan": "12-17 years",
+        "personality": "Intelligent, playful, talkative",
+        "img": "turkish_van.jpg"
+    } , {
+        "name": "Burmilla",
+        "lifespan": "10-15 years",
+        "personality": "Playful, relaxed, social",
+        "img": "burmilla.jpg"
+    } , {
+        "name": "LaPerm",
+        "lifespan": "10-14 years",
+        "personality": "Clever, intelligent, playful",
+        "img": "laperm.jpg"
+    } , {
+        "name": "Korat",
+        "lifespan": "10-15 years",
+        "personality": "Quiet, gentle, friendly",
+        "img": "korat.jpg"
+    } , {
+        "name": "American Wirehair",
+        "lifespan": "14-18 years",
+        "personality": "Family, lively, outgoing",
+        "img": "american_wirehair.jpg"
+    } 
 
     ]
 }

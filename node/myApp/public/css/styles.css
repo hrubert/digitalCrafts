@@ -7,7 +7,7 @@ h1 {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 40%;
 }
 
 ul {
@@ -15,15 +15,10 @@ ul {
     text-align: center;
 }
 
-button {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 70px;
-    padding: 10px;
+.card {
+    max-width: 400px;
 }
 
-img {
-    border-radius: 15px;
-    border: 3px solid navy;
+.card-columns, .bg {
+    background-color: lightgray;
 }

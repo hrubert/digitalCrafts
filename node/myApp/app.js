@@ -3,6 +3,7 @@ let app = express();
 let data = require('./data/data.json')
 
 app.set('catData', data);
+app.set('view engine', 'ejs');
 
 app.use(express.static('public'));
 
