@@ -1,12 +1,14 @@
 let express = require('express');
 let router = express.Router();
+let _ = require('lodash');
+
 
 router.get("/breeds/?", (req, res) => {
     let dataFile = req.app.get("catData");
 
     res.render('allCats', {
         catList: dataFile.breeds,
-        randNum: Math.floor(Math.random() * dataFile.breeds.length)  
+        randNum: _.random(0, dataFile.breeds.length - 1)  
     })
 })
 
@@ -16,8 +18,8 @@ router.get("/breeds/:breedID", (req, res) => {
 
     res.render('oneCat', {
         oneCat: dataFile.breeds[req.params.breedID],
-        catFact: catFacts[Math.floor(Math.random() * catFacts.length)],
-        randNum: Math.floor(Math.random() * dataFile.breeds.length)
+        catFact: _.sample(catFacts),
+        randNum: _.random(0, dataFile.breeds.length - 1)  
     })
 });
 

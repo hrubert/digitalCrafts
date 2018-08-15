@@ -1,280 +1,400 @@
 {
-    "breeds": [{
-        "name": "Exotic Shorthair",
-        "lifespan": "12-15 years",
-        "personality": "Lovely, warm, sweet",
-        "img": "exotic_shorthair.jpg"
-    }, {
-        "name": "Persian",
-        "lifespan": "14-15 years",
-        "personality": "Gentle, quiet, sensitive",
-        "img": "persian.jpg"
-    }, {
-        "name": "Maine Coon",
-        "lifespan": "12-15 years",
-        "personality": "Intelligent, independent, gentle",
-        "img": "maine_coon.jpg"
-    }, {
-        "name": "Ragdoll",
-        "lifespan": "12-17 years",
-        "personality": "Gentle, quiet, friendly",
-        "img": "ragdoll.jpg"
-    }, {
-        "name": "British Shorthair",
-        "lifespan": "12-17 years",
-        "personality": "Easy-going, loyal, patient",
-        "img": "british_shorthair.jpg"
-    }, {
-        "name": "American Shorthair",
-        "lifespan": "15-17 years",
-        "personality": "Active, curious, playful",
-        "img": "american_shorthair.jpg"
-    }, {
-        "name": "Abyssinian",
-        "lifespan": "14-15 years",
-        "personality": "Energetic, independent, intelligent",
-        "img": "abyssinian.jpg"
-    }, {
-        "name": "Sphynx",
-        "lifespan": "12-14 years",
-        "personality": "Gentle, quiet, friendly",
-        "img": "sphynx.jpg"
-    }, {
-        "name": "Siamese",
-        "lifespan": "12-15 years",
-        "personality": "Lively, active, smart",
-        "img": "siamese.jpg"
-    }, {
-        "name": "Scottish Fold",
-        "lifespan": "11-14 years",
-        "personality": "Affectionate, intelligent, loyal",
-        "img": "scottish_fold.jpg"
-    }, {
-        "name": "Cornish Rex",
-        "lifespan": "11-14 years",
-        "personality": "Playful, affectionate, intelligent",
-        "img": "cornish_rex.jpg"
-    }, {
-        "name": "Devon Rex",
-        "lifespan": "10-15 years",
-        "personality": "Loyal, playful, social",
-        "img": "devon_rex.jpg"
-    }, {
-        "name": "Oriental",
-        "lifespan": "12-14 years",
-        "personality": "Curious, intelligent, social",
-        "img": "oriental.jpg"
-    }, {
-        "name": "Norwegian Forest Cat",
-        "lifespan": "12-16 years",
-        "personality": "Curious, intelligent, loving",
-        "img": "norwegian.jpg"
-    }, {
-        "name": "Birman",
-        "lifespan": "14-15 years",
-        "personality": "Gentle, kind, loving",
-        "img": "birman.jpg"
-    }, {
-        "name": "Burmese",
-        "lifespan": "15-16 years",
-        "personality": "Curious, intelligent, interactive",
-        "img": "burmese.jpg"
-    }, {
-        "name": "Siberian",
-        "lifespan": "12-15 years",
-        "personality": "Agile, intelligent, loyal",
-        "img": "siberian.jpg"
-    }, {
-        "name": "Tonkinese",
-        "lifespan": "14-16 years",
-        "personality": "Curious, intelligent, lively",
-        "img": "tonkinese.jpg"
-    }, {
-        "name": "Russian Blue",
-        "lifespan": "10-16 years",
-        "personality": "Easy-going, intelligent, loyal",
-        "img": "russian_blue.jpg"
-    } , {
-        "name": "Egyptian Mau",
-        "lifespan": "18-20 years",
-        "personality": "Agile, intelligent, loyal",
-        "img": "egyptian_mau.jpg"
-    } , {
-        "name": "Ocicat",
-        "lifespan": "12-14 years",
-        "personality": "Active, agile, demanding",
-        "img": "ocicat.jpg"
-    }, {
-        "name": "Singapura",
-        "lifespan": "12-15 years",
-        "personality": "Curious, easy-going, family",
-        "img": "singapura.jpg"
-    }, {
-        "name": "Manx",
-        "lifespan": "12-14 years",
-        "personality": "Easy-going, intelligent, loyal",
-        "img": "manx.jpg"
-    }, {
-        "name": "Japanese Bobtail",
-        "lifespan": "14-16 years",
-        "personality": "Family, lively, loyal",
-        "img": "japanese_bobtail.jpg"
-    } , {
-        "name": "Selkirk Rex",
-        "lifespan": "14-15 years",
-        "personality": "Dependent, loving, patient",
-        "img": "selkirk_rex.jpg"
-    } , {
-        "name": "American Curl",
-        "lifespan": "12-16 years",
-        "personality": "Lively, interactive, loving",
-        "img": "american_curl.jpg"
-    } , {
-        "name": "Chartreux",
-        "lifespan": "12-15 years",
-        "personality": "Loyal, highlyintelligent, loving",
-        "img": "chartreux.jpg"
-    } , {
-        "name": "Somali",
-        "lifespan": "12-16 years",
-        "personality": "Curious, interactive, loyal",
-        "img": "somali.jpg"
-    } , {
-        "name": "Turkish Angora",
-        "lifespan": "15-18 years",
-        "personality": "Intelligent, playful, gentle",
-        "img": "turkish_angora.jpg"
-    } , {
-        "name": "Colorpoint Shorthair",
-        "lifespan": "12-16 years",
-        "personality": "Affectionate, intelligent, playful",
-        "img": "colorpoint_shorthair.jpg"
-    } , {
-        "name": "Balinese",
-        "lifespan": "10-15 years",
-        "personality": "Playful, intelligent, loving",
-        "img": "balinese.jpg"
-    } , {
-        "name": "Ragamuffin",
-        "lifespan": "12-16 years",
-        "personality": "Affectionate, friendly, gentle",
-        "img": "ragamuffin.jpg"
-    } , {
-        "name": "European Burmese",
-        "lifespan": "10-15 years",
-        "personality": "Affectionate, loyal, sweet",
-        "img": "european_burmese.jpg"
-    } , {
-        "name": "Bombay",
-        "lifespan": "12-16 years",
-        "personality": "Intelligent, loving, playful",
-        "img": "bombay.jpg"
-    } , {
-        "name": "Havana Brown",
-        "lifespan": "10-15 years",
-        "personality": "Curious, intelligent, demanding",
-        "img": "havana_brown.jpg"
-    } , {
-        "name": "American Bobtail",
-        "lifespan": "11-15 years",
-        "personality": "Interactive, Highly intelligent, lively",
-        "img": "american_bobtail.jpg"
-    } , {
-        "name": "Turkish Van",
-        "lifespan": "12-17 years",
-        "personality": "Intelligent, playful, talkative",
-        "img": "turkish_van.jpg"
-    } , {
-        "name": "Burmilla",
-        "lifespan": "10-15 years",
-        "personality": "Playful, relaxed, social",
-        "img": "burmilla.jpg"
-    } , {
-        "name": "LaPerm",
-        "lifespan": "10-14 years",
-        "personality": "Clever, intelligent, playful",
-        "img": "laperm.jpg"
-    } , {
-        "name": "Korat",
-        "lifespan": "10-15 years",
-        "personality": "Quiet, gentle, friendly",
-        "img": "korat.jpg"
-    } , {
-        "name": "American Wirehair",
-        "lifespan": "14-18 years",
-        "personality": "Family, lively, outgoing",
-        "img": "american_wirehair.jpg"
-    } , {
-        "name": "Bengal",
-        "lifespan": "12-16 years",
-        "personality": "Agile, Family, Inquisitive",
-        "img": "bengal.jpg"
-    } , {
-        "name": "California Spangled",
-        "lifespan": "10-14 years",
-        "personality": "Curious, intelligent, loyal",
-        "img": "california_spangled.jpg"
-    } , {
-        "name": "Cymric",
-        "lifespan": "8-14 years",
-        "personality": "Gentle, intelligent, loyal",
-        "img": "cymric.jpg"
-    } , {
-        "name": "Himalayan",
-        "lifespan": "9-15 years",
-        "personality": "Gentle, intelligent, quiet",
-        "img": "himalayan.jpg"
-    } , {
-        "name": "Munchkin",
-        "lifespan": "10-15 years",
-        "personality": "Agile, intelligent, easy-going",
-        "img": "munchkin.jpg"
-    } , {
-        "name": "Nebelung",
-        "lifespan": "11-16 years",
-        "personality": "Gentle, quiet, shy",
-        "img": "nebelung.jpg"
-    } , {
-        "name": "Pixie-bob",
-        "lifespan": "13-16 years",
-        "personality": "Affectionate, intelligent, sociable",
-        "img": "pixie_bob.jpg"
-    } , {
-        "name": "Savannah",
-        "lifespan": "11-20 years",
-        "personality": "Curious, intelligent, loyal",
-        "img": "savannah.jpg"
-    } , {
-        "name": "Snowshoe",
-        "lifespan": "14-19 years",
-        "personality": "Affectionate, intelligent, social",
-        "img": "snowshoe.jpg"
-    } , {
-        "name": "Toyger",
-        "lifespan": "12-15 years",
-        "personality": "Intelligent, playful, social",
-        "img": "toyger.jpg"
-    } , {
-        "name": "York Chocolate",
-        "lifespan": "13-15 years",
-        "personality": "Intelligent, playful, curious",
-        "img": "york_chocolate.jpg"
-    } , {
-        "name": "Aegean",
-        "lifespan": "9-12 years",
-        "personality": "Affectionate, intelligent, playful",
-        "img": "aegean.jpg"
-    } , {
-        "name": "Australian Mist",
-        "lifespan": "12-16 years",
-        "personality": "Intelligent, friendly",
-        "img": "australian_mist.jpg"
-    } , {
-        "name": "American Polydactyl",
-        "lifespan": "14-16 years",
-        "personality": "Intelligent, playful, social",
-        "img": "american_polydactyl.jpg"
-    } 
-
+    "breeds": [
+        {
+            "img": "abyssinian.jpg",
+            "lifespan": "14-15 years",
+            "name": "Abyssinian",
+            "personality": "Energetic, independent, intelligent"
+        },
+        {
+            "img": "aegean.jpg",
+            "lifespan": "9-12 years",
+            "name": "Aegean",
+            "personality": "Affectionate, intelligent, playful"
+        },
+        {
+            "img": "american_bobtail.jpg",
+            "lifespan": "11-15 years",
+            "name": "American Bobtail",
+            "personality": "Interactive, Highly intelligent, lively"
+        },
+        {
+            "img": "american_curl.jpg",
+            "lifespan": "12-16 years",
+            "name": "American Curl",
+            "personality": "Lively, interactive, loving"
+        },
+        {
+            "img": "american_polydactyl.jpg",
+            "lifespan": "14-16 years",
+            "name": "American Polydactyl",
+            "personality": "Intelligent, playful, social"
+        },
+        {
+            "img": "american_shorthair.jpg",
+            "lifespan": "15-17 years",
+            "name": "American Shorthair",
+            "personality": "Active, curious, playful"
+        },
+        {
+            "img": "american_wirehair.jpg",
+            "lifespan": "14-18 years",
+            "name": "American Wirehair",
+            "personality": "Family, lively, outgoing"
+        },
+        {
+            "img": "arabian_mau.jpg",
+            "lifespan": "12-14 years",
+            "name": "Arabian Mau",
+            "personality": "Agile, curious, independent"
+        },
+        {
+            "img": "asian_semi.jpg",
+            "lifespan": "12-15 years",
+            "name": "Asian Semi-longhair",
+            "personality": "Acitve, curious, gentle"
+        },
+        {
+            "img": "australian_mist.jpg",
+            "lifespan": "12-16 years",
+            "name": "Australian Mist",
+            "personality": "Intelligent, friendly"
+        },
+        {
+            "img": "balinese.jpg",
+            "lifespan": "10-15 years",
+            "name": "Balinese",
+            "personality": "Playful, intelligent, loving"
+        },
+        {
+            "img": "bambino.jpg",
+            "lifespan": "12-14 years",
+            "name": "Bambino",
+            "personality": "Friendly, intelligent, affectionate"
+        },
+        {
+            "img": "bengal.jpg",
+            "lifespan": "12-16 years",
+            "name": "Bengal",
+            "personality": "Agile, Family, Inquisitive"
+        },
+        {
+            "img": "birman.jpg",
+            "lifespan": "14-15 years",
+            "name": "Birman",
+            "personality": "Gentle, kind, loving"
+        },
+        {
+            "img": "bombay.jpg",
+            "lifespan": "12-16 years",
+            "name": "Bombay",
+            "personality": "Intelligent, loving, playful"
+        },
+        {
+            "img": "brazilian_shorthair.jpg",
+            "lifespan": "14-20 years",
+            "name": "Brazilian Shorthair",
+            "personality": "Active, playful, social"
+        },
+        {
+            "img": "british_semi.jpg",
+            "lifespan": "12-14 years",
+            "name": "British Semi-longhair",
+            "personality": "Easy-going, independent, loyal"
+        },
+        {
+            "img": "british_shorthair.jpg",
+            "lifespan": "12-17 years",
+            "name": "British Shorthair",
+            "personality": "Easy-going, loyal, patient"
+        },
+        {
+            "img": "burmese.jpg",
+            "lifespan": "15-16 years",
+            "name": "Burmese",
+            "personality": "Curious, intelligent, interactive"
+        },
+        {
+            "img": "burmilla.jpg",
+            "lifespan": "10-15 years",
+            "name": "Burmilla",
+            "personality": "Playful, relaxed, social"
+        },
+        {
+            "img": "california_spangled.jpg",
+            "lifespan": "10-14 years",
+            "name": "California Spangled",
+            "personality": "Curious, intelligent, loyal"
+        },
+        {
+            "img": "chantilly_tiffany.jpg",
+            "lifespan": "14-16 years",
+            "name": "Chantilly-Tiffany",
+            "personality": "Affectionate, demanding, interactive"
+        },
+        {
+            "img": "chartreux.jpg",
+            "lifespan": "12-15 years",
+            "name": "Chartreux",
+            "personality": "Loyal, highlyintelligent, loving"
+        },
+        {
+            "img": "chausie.jpg",
+            "lifespan": "12-14 years",
+            "name": "Chausie",
+            "personality": "Acitve, affectionate, social"
+        },
+        {
+            "img": "cheetoh.jpg",
+            "lifespan": "12-14 years",
+            "name": "Cheetoh",
+            "personality": "Affectionate, gentle, intelligent"
+        },
+        {
+            "img": "colorpoint_shorthair.jpg",
+            "lifespan": "12-16 years",
+            "name": "Colorpoint Shorthair",
+            "personality": "Affectionate, intelligent, playful"
+        },
+        {
+            "img": "cornish_rex.jpg",
+            "lifespan": "11-14 years",
+            "name": "Cornish Rex",
+            "personality": "Playful, affectionate, intelligent"
+        },
+        {
+            "img": "cymric.jpg",
+            "lifespan": "8-14 years",
+            "name": "Cymric",
+            "personality": "Gentle, intelligent, loyal"
+        },
+        {
+            "img": "cyprus.jpg",
+            "lifespan": "12-15 years",
+            "name": "Cyprus",
+            "personality": "Affectionate, social, gentle"
+        },
+        {
+            "img": "devon_rex.jpg",
+            "lifespan": "10-15 years",
+            "name": "Devon Rex",
+            "personality": "Loyal, playful, social"
+        },
+        {
+            "img": "egyptian_mau.jpg",
+            "lifespan": "18-20 years",
+            "name": "Egyptian Mau",
+            "personality": "Agile, intelligent, loyal"
+        },
+        {
+            "img": "european_burmese.jpg",
+            "lifespan": "10-15 years",
+            "name": "European Burmese",
+            "personality": "Affectionate, loyal, sweet"
+        },
+        {
+            "img": "exotic_shorthair.jpg",
+            "lifespan": "12-15 years",
+            "name": "Exotic Shorthair",
+            "personality": "Lovely, warm, sweet"
+        },
+        {
+            "img": "havana_brown.jpg",
+            "lifespan": "10-15 years",
+            "name": "Havana Brown",
+            "personality": "Curious, intelligent, demanding"
+        },
+        {
+            "img": "himalayan.jpg",
+            "lifespan": "9-15 years",
+            "name": "Himalayan",
+            "personality": "Gentle, intelligent, quiet"
+        },
+        {
+            "img": "japanese_bobtail.jpg",
+            "lifespan": "14-16 years",
+            "name": "Japanese Bobtail",
+            "personality": "Family, lively, loyal"
+        },
+        {
+            "img": "javanese.jpg",
+            "lifespan": "10-12 years",
+            "name": "Javanese",
+            "personality": "Affectionate, gentle, social"
+        },
+        {
+            "img": "korat.jpg",
+            "lifespan": "10-15 years",
+            "name": "Korat",
+            "personality": "Quiet, gentle, friendly"
+        },
+        {
+            "img": "laperm.jpg",
+            "lifespan": "10-14 years",
+            "name": "LaPerm",
+            "personality": "Clever, intelligent, playful"
+        },
+        {
+            "img": "maine_coon.jpg",
+            "lifespan": "12-15 years",
+            "name": "Maine Coon",
+            "personality": "Intelligent, independent, gentle"
+        },
+        {
+            "img": "malayan.jpg",
+            "lifespan": "12-18 years",
+            "name": "Malayan",
+            "personality": "Affectionate, interactive, playful"
+        },
+        {
+            "img": "manx.jpg",
+            "lifespan": "12-14 years",
+            "name": "Manx",
+            "personality": "Easy-going, intelligent, loyal"
+        },
+        {
+            "img": "munchkin.jpg",
+            "lifespan": "10-15 years",
+            "name": "Munchkin",
+            "personality": "Agile, intelligent, easy-going"
+        },
+        {
+            "img": "nebelung.jpg",
+            "lifespan": "11-16 years",
+            "name": "Nebelung",
+            "personality": "Gentle, quiet, shy"
+        },
+        {
+            "img": "norwegian.jpg",
+            "lifespan": "12-16 years",
+            "name": "Norwegian Forest Cat",
+            "personality": "Curious, intelligent, loving"
+        },
+        {
+            "img": "ocicat.jpg",
+            "lifespan": "12-14 years",
+            "name": "Ocicat",
+            "personality": "Active, agile, demanding"
+        },
+        {
+            "img": "oriental.jpg",
+            "lifespan": "12-14 years",
+            "name": "Oriental",
+            "personality": "Curious, intelligent, social"
+        },
+        {
+            "img": "persian.jpg",
+            "lifespan": "14-15 years",
+            "name": "Persian",
+            "personality": "Gentle, quiet, sensitive"
+        },
+        {
+            "img": "pixie_bob.jpg",
+            "lifespan": "13-16 years",
+            "name": "Pixie-bob",
+            "personality": "Affectionate, intelligent, sociable"
+        },
+        {
+            "img": "ragamuffin.jpg",
+            "lifespan": "12-16 years",
+            "name": "Ragamuffin",
+            "personality": "Affectionate, friendly, gentle"
+        },
+        {
+            "img": "ragdoll.jpg",
+            "lifespan": "12-17 years",
+            "name": "Ragdoll",
+            "personality": "Gentle, quiet, friendly"
+        },
+        {
+            "img": "russian_blue.jpg",
+            "lifespan": "10-16 years",
+            "name": "Russian Blue",
+            "personality": "Easy-going, intelligent, loyal"
+        },
+        {
+            "img": "savannah.jpg",
+            "lifespan": "11-20 years",
+            "name": "Savannah",
+            "personality": "Curious, intelligent, loyal"
+        },
+        {
+            "img": "scottish_fold.jpg",
+            "lifespan": "11-14 years",
+            "name": "Scottish Fold",
+            "personality": "Affectionate, intelligent, loyal"
+        },
+        {
+            "img": "selkirk_rex.jpg",
+            "lifespan": "14-15 years",
+            "name": "Selkirk Rex",
+            "personality": "Dependent, loving, patient"
+        },
+        {
+            "img": "siamese.jpg",
+            "lifespan": "12-15 years",
+            "name": "Siamese",
+            "personality": "Lively, active, smart"
+        },
+        {
+            "img": "siberian.jpg",
+            "lifespan": "12-15 years",
+            "name": "Siberian",
+            "personality": "Agile, intelligent, loyal"
+        },
+        {
+            "img": "singapura.jpg",
+            "lifespan": "12-15 years",
+            "name": "Singapura",
+            "personality": "Curious, easy-going, family"
+        },
+        {
+            "img": "snowshoe.jpg",
+            "lifespan": "14-19 years",
+            "name": "Snowshoe",
+            "personality": "Affectionate, intelligent, social"
+        },
+        {
+            "img": "somali.jpg",
+            "lifespan": "12-16 years",
+            "name": "Somali",
+            "personality": "Curious, interactive, loyal"
+        },
+        {
+            "img": "sphynx.jpg",
+            "lifespan": "12-14 years",
+            "name": "Sphynx",
+            "personality": "Gentle, quiet, friendly"
+        },
+        {
+            "img": "tonkinese.jpg",
+            "lifespan": "14-16 years",
+            "name": "Tonkinese",
+            "personality": "Curious, intelligent, lively"
+        },
+        {
+            "img": "toyger.jpg",
+            "lifespan": "12-15 years",
+            "name": "Toyger",
+            "personality": "Intelligent, playful, social"
+        },
+        {
+            "img": "turkish_angora.jpg",
+            "lifespan": "15-18 years",
+            "name": "Turkish Angora",
+            "personality": "Intelligent, playful, gentle"
+        },
+        {
+            "img": "turkish_van.jpg",
+            "lifespan": "12-17 years",
+            "name": "Turkish Van",
+            "personality": "Intelligent, playful, talkative"
+        },
+        {
+            "img": "york_chocolate.jpg",
+            "lifespan": "13-15 years",
+            "name": "York Chocolate",
+            "personality": "Intelligent, playful, curious"
+        }
     ]
 }

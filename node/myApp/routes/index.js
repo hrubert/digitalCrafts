@@ -1,13 +1,14 @@
 let express = require('express');
 let router = express.Router();
+let _ = require('lodash');
 
 router.get("/", (req, res, next) => {
     let dataFile = req.app.get("catData");
    
     res.render('index', {
-        randomCat: Math.floor(Math.random() * dataFile.breeds.length),
+        randomCat: _.random(0, dataFile.breeds.length - 1),
         catList: dataFile.breeds,
-        randNum: Math.floor(Math.random() * dataFile.breeds.length)          
+        randNum: _.random(0, dataFile.breeds.length - 1)          
     });
 });
 
