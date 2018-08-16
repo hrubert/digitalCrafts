@@ -22,7 +22,7 @@ ul {
 
 
 
-blockquote {
+.fact {
     max-width: 400px;
     margin-left: auto;
     margin-right: auto;
@@ -46,7 +46,7 @@ h3 {
     min-height: calc(100vh - 50px);
 }
 
-footer {
+.page-footer {
     background-color: black;
     color: white;
     height: 50px;
@@ -61,5 +61,10 @@ footer {
 {
     background-color: #FAFAFA;
 	padding: 10px 40px 60px;
+	margin: 10px 0px 60px;
+}
+
+.recent {
+    padding: 10px 40px 60px;
 	margin: 10px 0px 60px;
 }

@@ -4,6 +4,7 @@ let body_parser = require('body-parser');
 let app = express();
 let data = require('./data/data.json');
 let catFacts = require('./data/catFacts.json');
+let feedback = require('./data/contact.json')
 
 app.use(cors());
 app.use(body_parser.urlencoded({extended: false}));
@@ -11,6 +12,7 @@ app.use(body_parser.urlencoded({extended: false}));
 app.set('view engine', 'ejs');
 app.set('catData', data);
 app.set('catFacts', catFacts);
+app.set('feedback', feedback);
 
 app.use(express.static('public'));
 
