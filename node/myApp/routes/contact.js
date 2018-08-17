@@ -5,7 +5,7 @@ router.get("/contact", (req, res) => {
     let dataFile = req.app.get("catData");
     
     res.render('contact', {
-        randNum: Math.floor(Math.random() * dataFile.breeds.length),   
+        randNum: Math.floor(Math.random() * dataFile.breeds.length)   
     });
 });
 
