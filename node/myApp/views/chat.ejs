@@ -69,9 +69,13 @@
             });
             socket.on('chat message', function (msg) {
                 $('#messages').append($('<li>').text(msg));
+                return false;
             });
-            socket.on('connection', function () {
-                $('#messages').append($('<li>')).text("A user connected");
+            socket.on('connect', function () {
+                socket.emit('chat message', 'Another cat lover joined');
+            });
+            socket.on('disconnect', function () {
+                socket.emit('chat message', 'Someone had to get back to their cat');
             });
         });
     </script>

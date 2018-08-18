@@ -35,6 +35,9 @@ io.on('connection', function (socket) {
     socket.on('chat message', function (msg) {
         io.emit('chat message', msg);
     });
+    socket.on('disconnect', function () {
+        io.emit('chat message', 'Someone had to get back to their cat');
+    });
 });
 
 http.listen(3000, () => {
