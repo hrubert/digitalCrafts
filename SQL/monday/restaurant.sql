@@ -23,4 +23,16 @@
 -- SELECT * FROM restaurant WHERE does_takeout = TRUE AND category = 'BBQ';
 -- SELECT * FROM restaurant WHERE distance < 2;
 -- SELECT * FROM restaurant WHERE last_time_ate < '2018-08-13';
-SELECT * FROM restaurant WHERE last_time_ate < '2018-08-13' AND stars = 5;
+-- SELECT * FROM restaurant WHERE last_time_ate < '2018-08-13' AND stars = 5;
+
+
+-- Aggregation exercises
+-- SELECT * FROM restaurant ORDER BY distance;
+-- SELECT * FROM restaurant ORDER BY distance LIMIT 2;
+-- SELECT * FROM restaurant ORDER BY stars DESC LIMIT 2;
+-- SELECT * FROM restaurant WHERE distance < 2 ORDER BY stars DESC LIMIT 2;
+-- SELECT COUNT(*) FROM restaurant;
+-- SELECT COUNT(*) FROM restaurant WHERE category = 'mexican';
+-- SELECT AVG(stars) FROM restaurant WHERE category = 'american';
+-- SELECT MAX(stars) FROM restaurant WHERE category = 'mexican';
+
