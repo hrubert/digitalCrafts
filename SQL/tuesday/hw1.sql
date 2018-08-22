@@ -85,16 +85,16 @@
 --     count(project_uses_tech.tech_id) DESC;
 
 -- average number of techs used by a project
--- SELECT
---     avg(count)
--- FROM
---     (SELECT
---             project.id,
---             project.name,
---             count(tech_id)
---         FROM
---             project
---         LEFT OUTER JOIN
---             project_uses_tech on project.id = project_uses_tech.project_id
---         GROUP BY
---             project.id) AS tech_counts;
+SELECT
+    avg(count)
+FROM
+    (SELECT
+            project.id,
+            project.name,
+            count(tech_id)
+        FROM
+            project
+        LEFT OUTER JOIN
+            project_uses_tech on project.id = project_uses_tech.project_id
+        GROUP BY
+            project.id) AS tech_counts;
