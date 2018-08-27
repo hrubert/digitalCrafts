@@ -1,0 +1,13 @@
+{
+  "name": "@therbert/how-to-npm",
+  "version": "1.0.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "author": "therbert",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {},
+  "repository": "https://github.com/hrubert/digitalCrafts"
+}
