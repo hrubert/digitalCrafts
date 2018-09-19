@@ -6,8 +6,10 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Icon from '@material-ui/core/Icon';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
+import Button from '@material-ui/core/Button';
 
 const styles = theme => ({
   root: {
@@ -24,6 +26,10 @@ class ContactItem extends React.Component {
     handleDelete(id) {
       this.props.onDelete(id);
     }
+
+    handleEdit(id) {
+      this.props.onEdit(id);
+    }
   
     render () {
       const { classes } = this.props;
@@ -36,6 +42,9 @@ class ContactItem extends React.Component {
         <Typography>
         Phone: {this.props.contact.phone} <br />
         Address: {this.props.contact.address}, {this.props.contact.city}, {this.props.contact.state}, {this.props.contact.zip}
+        <a onClick={this.handleEdit.bind(this, this.props.contact.id)}><Button className={classes.button} aria-label="Edit">
+          <Icon>edit_icon</Icon>
+        </Button></a>
         <a onClick={this.handleDelete.bind(this, this.props.contact.id)}><IconButton className={classes.button} aria-label="Delete">
           <DeleteIcon />
         </IconButton></a>

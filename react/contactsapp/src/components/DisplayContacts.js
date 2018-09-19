@@ -29,10 +29,18 @@ class DisplayContacts extends React.Component {
     onDeleteContact(id) {
         this.props.onDeleteContact(id);
     }
+    onEditContact(id) {
+        this.props.onEditContact(id);
+    }
 
     render() {
     let ContactItems = this.props.contacts.sort(compareNames).map((contact) => {
-        return <ContactItem onDelete={this.onDeleteContact.bind(this)} key={contact.id} contact={contact} />
+        return (<ContactItem 
+            onDelete={this.onDeleteContact.bind(this)} 
+            onEdit={this.onEditContact.bind(this)}
+            key={contact.id} 
+            contact={contact} />
+        )
     })
     return (
         <div>

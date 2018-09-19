@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import uuid from 'uuid';
+
 
 const styles = theme => ({
   container: {
@@ -20,19 +20,46 @@ const styles = theme => ({
   },
   menu: {
     width: 200,
-  }
+  },
 });
 
-class TextFields extends React.Component {
-  state = {
-    name: '',
-    email: '',
-    phone: '',
-    address: '',
-    city: '',
-    state: '',
-    zip: ''
-  };
+class EditContacts extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: '',
+            email: '',
+            phone: '',
+            address: '',
+            city: '',
+            state: '',
+            zip: '',
+        };
+    }
+
+    componentWillReceiveProps(nextProps){
+        if(nextProps.contact.name !== this.props.contact.name){
+            this.setState({name: nextProps.contact.name});
+        }
+        if(nextProps.contact.email !== this.props.contact.email){
+            this.setState({email: nextProps.contact.email});
+        }
+        if(nextProps.contact.phone !== this.props.contact.phone){
+            this.setState({phone: nextProps.contact.phone});
+        }
+        if(nextProps.contact.address !== this.props.contact.address){
+            this.setState({address: nextProps.contact.address});
+        }
+        if(nextProps.contact.city !== this.props.contact.city){
+            this.setState({city: nextProps.contact.city});
+        }
+        if(nextProps.contact.state !== this.props.contact.state){
+            this.setState({state: nextProps.contact.state});
+        }
+        if(nextProps.contact.zip !== this.props.contact.zip){
+            this.setState({zip: nextProps.contact.zip});
+        }
+    }
 
   handleSubmit = (e) => {
     if(this.state.name === ''){
@@ -40,9 +67,9 @@ class TextFields extends React.Component {
     } 
     else {
     this.setState({newContact: {
-        id: uuid.v4(),
-        name: this.state.name || this.props.contact.name,
-        email: this.state.email || this.props.contact.email,
+        id: this.props.contact.id,
+        name: this.state.name,
+        email: this.state.event,
         phone: this.state.phone,
         address: this.state.address,
         city: this.state.city,
@@ -50,12 +77,11 @@ class TextFields extends React.Component {
         zip: this.state.zip
     }}, function() {
       // console.log(this.state);
-      this.props.addContact(this.state.newContact);
+      this.props.updateContact(this.state.newContact);
     })
     }
     e.preventDefault();    
   }
-           
 
 
   handleChange = name => event => {
@@ -66,10 +92,9 @@ class TextFields extends React.Component {
 
   render() {
     const { classes } = this.props;   
-
     return (
       <div>
-        <h2 style={{textAlign: 'center'}}>Add Contact</h2>
+          <h2 style={{textAlign: 'center', marginTop: '3em'}}>Edit Contact</h2>
       <form className={classes.container} noValidate autoComplete="off" onSubmit={this.handleSubmit}>
         <TextField
           id="name"
@@ -128,8 +153,8 @@ class TextFields extends React.Component {
           className={classes.textField}
           margin="normal"
         />
-        <Button variant="raised" color="secondary" className={classes.button} style={{marginTop: "15px"}} type="submit">
-        Add Contact
+        <Button variant="raised" color="primary" className={classes.button} style={{marginTop: "15px"}} type="submit">
+        Edit Contact
       </Button>
       </form>
       </div>
@@ -137,8 +162,8 @@ class TextFields extends React.Component {
   }
 }
 
-TextFields.propTypes = {
+EditContacts.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(TextFields);
+export default withStyles(styles)(EditContacts);
