@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
@@ -21,8 +20,13 @@ const styles = theme => ({
 });
 
 class ContactItem extends React.Component {
+
+    handleDelete(id) {
+      this.props.onDelete(id);
+    }
   
     render () {
+      const { classes } = this.props;
     return ( 
       <ExpansionPanel key={this.props.contact.id}>
       <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
@@ -32,9 +36,9 @@ class ContactItem extends React.Component {
         <Typography>
         Phone: {this.props.contact.phone} <br />
         Address: {this.props.contact.address}, {this.props.contact.city}, {this.props.contact.state}, {this.props.contact.zip}
-        {/* <a href="#" onClick={this.handleDelete.bind(this)}><IconButton className={classes.button} aria-label="Delete">
-          <DeleteIcon /> */}
-        {/* </IconButton></a> */}
+        <a onClick={this.handleDelete.bind(this, this.props.contact.id)}><IconButton className={classes.button} aria-label="Delete">
+          <DeleteIcon />
+        </IconButton></a>
         </Typography>
       </ExpansionPanelDetails>
     </ExpansionPanel>

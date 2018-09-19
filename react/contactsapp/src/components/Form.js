@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import uuid from 'uuid';
+
 const styles = theme => ({
   container: {
     display: 'flex',
@@ -23,22 +24,62 @@ const styles = theme => ({
 });
 
 class TextFields extends React.Component {
+  state = {
+    name: '',
+    email: '',
+    phone: '',
+    address: '',
+    city: '',
+    state: '',
+    zip: '',
+    initialContacts: []                              
+  };
+
+  handleSubmit = (e) => {
+    if(this.state.name === ''){
+      alert('Name can not be empty');
+    } 
+    else {
+    this.setState({newContact: {
+        id: uuid.v4(),
+        name: this.state.name,
+        email: this.state.event,
+        phone: this.state.phone,
+        address: this.state.address,
+        city: this.state.city,
+        state: this.state.state,
+        zip: this.state.zip
+    }}, function() {
+      // console.log(this.state);
+      this.props.addContact(this.state.newContact);
+    })
+    }
+    e.preventDefault();    
+  }
+           
+
+
+  handleChange = name => event => {
+    this.setState({
+      [name]: event.target.value,
+    });
+  };
 
   render() {
     const { classes } = this.props;   
 
     return (
-    <div>
+      <div>
       <form className={classes.container} noValidate autoComplete="off" onSubmit={this.handleSubmit}>
         <TextField
           id="name"
           label="Name"
           className={classes.textField}
-          type="text"
-          ref="name"
+          value={this.state.name}
+          onChange={this.handleChange('name')}
           margin="normal"
         />
-        {/* <TextField
+        <TextField
           id="email"
           label="Email"
           className={classes.textField}          
@@ -86,7 +127,7 @@ class TextFields extends React.Component {
           onChange={this.handleChange('zip')}
           className={classes.textField}
           margin="normal"
-        /> */}
+        />
         <Button variant="raised" color="secondary" className={classes.button} style={{marginTop: "15px"}} type="submit">
         Add Contact
       </Button>

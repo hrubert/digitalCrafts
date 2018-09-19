@@ -45,37 +45,26 @@ class App extends Component {
     });
   };
 
-  handleSubmit = (e) => {
-    if(this.state.name === ''){
-      alert('Name can not be empty');
-    } else {
-      let arrayCopy = this.state.initialContacts;
-      this.setState({
-        initialContacts: arrayCopy.concat({
-          id: uuid.v4(),
-          name: this.state.name,
-          email: this.state.event,
-          phone: this.state.phone,
-          address: this.state.address,
-          city: this.state.city,
-          state: this.state.state,
-          zip: this.state.zip
-        })
-      });
-    }
-    e.preventDefault();          
-  };
+  handleAddContact(sentContact) {
+    let newContact = this.state.contactList;
+    newContact.push(sentContact);
+    this.setState({contactList: newContact});
+  }
 
-  handleDelete(id) {
-    console.log(this.key);
+  handleDeleteContact(id) {
+    let contact = this.state.contactList;
+    let index = contact.findIndex(x => x.id === id);
+
+    contact.splice(index, 1);
+    this.setState({contactList: contact})
   }
 
   render() {
     return (
       <div>
         <AppBar />
-        <DisplayContacts contacts={this.state.contactList} />
-        <Form />
+        <DisplayContacts onDeleteContact={this.handleDeleteContact.bind(this)} contacts={this.state.contactList} />
+        <Form addContact={this.handleAddContact.bind(this)}/>
       </div>
     );
   }

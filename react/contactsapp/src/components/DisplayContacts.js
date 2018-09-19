@@ -26,10 +26,13 @@ function compareNames(a, b) {
 }
 
 class DisplayContacts extends React.Component {
+    onDeleteContact(id) {
+        this.props.onDeleteContact(id);
+    }
 
     render() {
     let ContactItems = this.props.contacts.sort(compareNames).map((contact) => {
-        return <ContactItem key={contact.id} contact={contact} />
+        return <ContactItem onDelete={this.onDeleteContact.bind(this)} key={contact.id} contact={contact} />
     })
     return (
         <div>
