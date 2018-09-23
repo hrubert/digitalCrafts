@@ -51,7 +51,7 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-//connect
+//connect to redux
 
 const App = connect(
     mapStateToProps,
