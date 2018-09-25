@@ -1,34 +1,129 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
+import { fade } from '@material-ui/core/styles/colorManipulator';
+import { withStyles } from '@material-ui/core/styles';
+import MenuIcon from '@material-ui/icons/Menu';
 
-const styles = {
+const styles = theme => ({
   root: {
+    width: '100%',
+  },
+  grow: {
     flexGrow: 1,
   },
-};
+  menuButton: {
+    marginLeft: -12,
+    marginRight: 20,
+  },
+  title: {
+    display: 'none',
+    [theme.breakpoints.up('sm')]: {
+      display: 'block',
+    },
+  },
+  search: {
+    position: 'relative',
+    borderRadius: theme.shape.borderRadius,
+    backgroundColor: fade(theme.palette.common.white, 0.15),
+    '&:hover': {
+      backgroundColor: fade(theme.palette.common.white, 0.25),
+    },
+    marginLeft: 0,
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+      marginLeft: theme.spacing.unit,
+      width: 'auto',
+    },
+  },
+  searchIcon: {
+    width: theme.spacing.unit * 9,
+    height: '100%',
+    position: 'absolute',
+    pointerEvents: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  inputRoot: {
+    color: 'inherit',
+    width: '100%',
+  },
+  inputInput: {
+    paddingTop: theme.spacing.unit,
+    paddingRight: theme.spacing.unit,
+    paddingBottom: theme.spacing.unit,
+    paddingLeft: theme.spacing.unit * 10,
+    transition: theme.transitions.create('width'),
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+      width: 120,
+      '&:focus': {
+        width: 200,
+      },
+    },
+  },
+});
 
-function SimpleAppBar(props) {
-  const { classes } = props;
+class SearchAppBar extends React.Component {
+  state = {
+    name: '',
+  }
+  handleChange = name => event => {
+    this.setState({
+      [name]: event.target.value,
+    });
+  };
 
+  render() {
+    const { classes } = this.props;
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="default">
+      <AppBar position="static">
         <Toolbar>
-          <Typography variant="title" color="inherit">
-            My Movie Collection
+          <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
+            <MenuIcon />
+          </IconButton>
+          <Typography className={classes.title} variant="title" color="inherit" noWrap>
+            My Movie Cart
           </Typography>
+          {/* <div className={classes.grow} />
+          <div className={classes.search}>
+            <div className={classes.searchIcon}>
+              <SearchIcon />
+            </div>
+            <Input
+              placeholder="Add Movie"
+              disableUnderline
+              value={this.state.name}
+              onChange={this.handleChange('name')}
+              classes={{
+                root: classes.inputRoot,
+                input: classes.inputInput,
+              }}
+            />
+          </div>
+          <div>
+              <Button 
+                onClick = {() => this.props.handleAddHero({
+                  heroName: this.state.name,
+                })}
+                variant="fab" mini color="primary" aria-label="Add" className={classes.button}>
+                <AddIcon />
+              </Button>
+            </div> */}
         </Toolbar>
       </AppBar>
     </div>
   );
 }
+}
 
-SimpleAppBar.propTypes = {
+SearchAppBar.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(SimpleAppBar);
+export default withStyles(styles)(SearchAppBar);

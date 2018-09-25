@@ -6,7 +6,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
-
+import uuid from 'uuid'
 
 const styles = theme => ({
   container: {
@@ -50,19 +50,11 @@ class AddMovie extends React.Component {
               margin="normal"
               variant="outlined"
             />
-            <TextField
-              id="outlined-url"
-              label="Picture URL"
-              className={classes.textField}
-              value={this.state.url}
-              onChange={this.handleChange('url')}
-              margin="normal"
-              variant="outlined"
-            />
             <Button 
             onClick = {() => this.props.handleAddHero({
               heroName: this.state.name,
-              heroURL: this.state.url
+              heroURL: this.state.url,
+              id: uuid.v4()
             })}
             variant="fab" color="primary" aria-label="Add" className={classes.button}>
               <AddIcon />

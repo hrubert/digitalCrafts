@@ -1,9 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Icon from '@material-ui/core/Icon';
-import IconButton from '@material-ui/core/IconButton';
-import DeleteIcon from '@material-ui/icons/Delete';
 
 
 class MovieList extends Component {
@@ -12,20 +7,22 @@ class MovieList extends Component {
         return (
             <div>
                 <row>
-                  <h1 key={hero.heroURL}>{hero.heroTitle}</h1> 
-                  <IconButton aria-label="Delete" onClick={() => this.props.handleDeleteHero({
+                  <h1 style={{textAlign: 'center'}} key={hero.id}>{hero.heroName}</h1>
+                  <h3 style={{textAlign: 'center'}} key={hero.id}>${hero.price}</h3>                   
+                  {/* <IconButton aria-label="Delete" onClick={() => this.props.handleDeleteHero({
                         heroName: hero.heroName,
-                        heroURL: hero.heroURL
+                        heroURL: hero.heroURL,
+                        id: hero.id
                       })}>
                       <DeleteIcon />
-                  </IconButton>
+                  </IconButton> */}
                 </row>
-                <img key={hero.heroURL} src={hero.heroURL} alt="Movie Image" style={{height: "300px"}}/>
+                <a onClick={() => this.props.handleAddToCart(hero)}><img key={hero.imdb} src={hero.heroURL} alt="Movie Poster" style={{height: "300px"}}/></a>
             </div>
         )
       })
     return (
-      <div>
+      <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between'}}>
           {movies}
       </div>
     );
