@@ -1,25 +1,37 @@
-export function heroReducer(state = {heroList: []}, action) {
+export function heroReducer(state, action) {
+
+    if(state === undefined) {
+        console.log("initial state")
+        return {
+            heroList: [{
+                heroTitle: 'Hero',
+               heroURL: 'https://www.impawards.com/2004/posters/hero.jpg'
+            },
+            {
+                heroTitle: 'Ip Man',
+                heroURL: 'https://images-na.ssl-images-amazon.com/images/I/61q1uWFVzzL.jpg'
+            }
+        ]
+        }
+    }
+
     switch (action.type) {
-        case 'addHero':
+        case 'ADD_HERO':
             return {
                 ...state,
-                heroList: state.heroList.concat(action.hero)
+                heroList: state.heroList.concat({
+                    heroName: action.heroData.heroName,
+                    heroURL: action.heroData.heroURL
+                })
             }
-        case 'deleteHero':
+        case 'DELETE_HERO':
             const updatedHeroes = state.heroList.filter(hero => 
-                hero.heroURL !==action.heroData.heroURL)
+                hero.heroURL !== action.heroData.heroURL)
             return {
                 ...state,
                 heroList: updatedHeroes
-            }
+                }
         default:
             return state;
     }
 }
-
-    // = {
-    // heroList: [{
-    //     heroTitle: 'Hero',
-    //     heroURL: 'http://www.impawards.com/2004/posters/hero.jpg'
-    // }]
-// }

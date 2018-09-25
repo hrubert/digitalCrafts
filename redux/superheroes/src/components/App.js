@@ -1,17 +1,23 @@
+import { connect } from 'react-redux';
 import React, { Component } from 'react';
-import SimpleAppBar from "./AppBar";
-import MovieList from "./MovieList";
+import Container from "./Container"
+import {addHero, deleteHero} from "../actions/index";
 
-class App extends Component {
-  render() {
-    console.log(this.props.heroList);
-    return (
-      <div className="App">
-        <SimpleAppBar/>
-        {/* <MovieList heroList={this.props.heroList}/> */}
-      </div>
-    );
+
+const mapStateToProps = (state) => {
+  return { heroList: state.heroList }
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+      onAddHero: (heroData) => dispatch(addHero(heroData)),
+      onDeleteHero: (heroData) => dispatch(deleteHero(heroData))
   }
 }
 
-export default App;
+var connectedComponent = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Container);
+
+export default connectedComponent;
